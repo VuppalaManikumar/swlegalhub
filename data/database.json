@@ -29,12 +29,12 @@
       "id": "adv-ghouseddin",
       "name": "Adv. Shaik Ghouseddin",
       "qualifications": "B.Com, MBA, M.Com, Mass Sociology, Mass Psychology, LLB",
-      "role": "Managing Partner & Senior Legal Consultant",
+      "role": "Managing Partner & Senior Legal Consultant (Civil & Criminal Practice)",
       "specializations": [
-        "Civil Litigation",
-        "High-Value Commercial Disputes",
-        "Mediation & Arbitration",
-        "Constitutional Law"
+        "Criminal Defense & Bail Petitions",
+        "Civil Litigation & Property Suits",
+        "Injunctions & Partition Matters",
+        "Constitutional Law & Commercial Disputes"
       ],
       "languages": [
         "English",
@@ -42,19 +42,19 @@
         "Hindi",
         "Urdu"
       ],
-      "bio": "Distinguished legal counsel combining multi-disciplinary expertise in commerce, psychology, and jurisprudence to deliver formidable courtroom defense and strategic counsel.",
+      "bio": "Distinguished senior counsel leading the firm's Criminal Defense and Civil Litigation divisions, delivering formidable courtroom advocacy across Telangana District and High Courts.",
       "featured": true
     },
     {
       "id": "adv-murtuza",
       "name": "Adv. Shaik Murtuza",
       "qualifications": "B.Com, LLB",
-      "role": "Senior Partner & Commercial Litigator",
+      "role": "Senior Partner & Cheque Bounce (Sec 138 NI Act) Counsel",
       "specializations": [
-        "Civil Law",
-        "Property Title Verification",
-        "Injunctions & Partition Suits",
-        "Contract Enforcement"
+        "Cheque Bounce Cases (Sec 138 NI Act)",
+        "Statutory 15-Day Demand Notices",
+        "Commercial Debt Recovery & Summary Suits",
+        "Magistrate Court Trials & Section 143A Petitions"
       ],
       "languages": [
         "English",
@@ -62,7 +62,7 @@
         "Hindi",
         "Urdu"
       ],
-      "bio": "Expert in property, land acquisition, and commercial dispute resolution with a strong track record across Telangana district and high courts.",
+      "bio": "Specialist counsel in Section 138 Negotiable Instruments Act cheque bounce prosecutions, statutory demand notices, Magistrate trials, and commercial debt recovery.",
       "featured": true
     },
     {
@@ -108,12 +108,12 @@
       "id": "adv-moizuddin",
       "name": "Adv. Md. Moizuddin",
       "qualifications": "BA.LLB",
-      "role": "Criminal Defense & Trial Counsel",
+      "role": "Senior Partner - Criminal Defense & Civil Litigation",
       "specializations": [
-        "Criminal Defense (BNS / IPC)",
+        "Criminal Law (BNS / IPC Defense)",
         "Regular & Anticipatory Bail",
-        "Police Station Representation",
-        "Trial Proceedings"
+        "Civil Property Disputes & Injunctions",
+        "Police Station Representation & Remand Defense"
       ],
       "languages": [
         "English",
@@ -121,20 +121,19 @@
         "Hindi",
         "Urdu"
       ],
-      "bio": "Fierce criminal trial litigator adept at immediate 24/7 bail interventions, police detention liaison, and criminal complaint quashing.",
+      "bio": "Aggressive courtroom litigator handling high-stakes criminal defenses, immediate bail petitions, police station representations, and civil dispute litigation.",
       "featured": false
     },
     {
       "id": "adv-azaruddin",
       "name": "Adv. Shaik Azaruddin",
       "qualifications": "BA.LLB",
-      "role": "Cyber & Technology Law Specialist",
+      "role": "Senior Partner & Cybercrime Law Specialist",
       "specializations": [
-        "Cybercrime Law",
+        "Cybercrime Law & Cyber Police Cells",
         "Bank Account Freeze Defreeze NOC",
-        "1930 Portal Escalations",
-        "Digital Financial Fraud",
-        "IT Act Offences"
+        "1930 Portal Escalations & Financial Fraud",
+        "Information Technology (IT) Act Offences"
       ],
       "languages": [
         "English",
@@ -148,19 +147,19 @@
       "id": "adv-imranuddin",
       "name": "Adv. Shaik Imranuddin",
       "qualifications": "BA.LLB",
-      "role": "Commercial & Negotiable Instruments Counsel",
+      "role": "Commercial & Corporate Legal Consultant",
       "specializations": [
-        "Cheque Bounce Cases (Sec 138 NI Act)",
-        "Statutory Demand Notices",
-        "Commercial Debt Recovery",
-        "Summary Suits"
+        "Commercial Law & Contracts",
+        "Corporate Legal Scrutiny",
+        "Mediation & Arbitration",
+        "Civil Legal Documentation"
       ],
       "languages": [
         "English",
         "Telugu",
         "Hindi"
       ],
-      "bio": "High-velocity debt recovery and cheque dishonor counsel with an extensive portfolio of successful recovery verdicts and out-of-court settlements.",
+      "bio": "Experienced commercial and legal counsel handling corporate contracts, business advisory, and civil arbitrations.",
       "featured": false
     }
   ],
@@ -195,7 +194,7 @@
         "Land Encroachment, Boundary & Possession Suits",
         "RERA & Consumer Forum Litigation"
       ],
-      "leadAdvocate": "Adv. Shaik Ghouseddin & Adv. Shaik Murtuza"
+      "leadAdvocate": "Adv. Shaik Ghouseddin & Adv. Md. Moizuddin"
     },
     {
       "id": "criminal-law",
@@ -211,7 +210,7 @@
         "Assault, Matrimonial & Property Crime Defense",
         "High Court Criminal Appeals & Writs"
       ],
-      "leadAdvocate": "Adv. Md. Moizuddin & Adv. Shaik Ghouseddin"
+      "leadAdvocate": "Adv. Shaik Ghouseddin & Adv. Md. Moizuddin"
     },
     {
       "id": "cybercrime-law",
@@ -243,30 +242,9 @@
         "High Court Quash Petitions & Compounding of Offences",
         "Pre-Trial Commercial Settlement Negotiations"
       ],
-      "leadAdvocate": "Adv. Shaik Imranuddin"
+      "leadAdvocate": "Adv. Shaik Murtuza"
     }
   ],
-  "consultations": [
-    {
-      "refId": "SWL-2026-6605",
-      "clientName": "manikumar",
-      "phone": "9392280234",
-      "email": "",
-      "category": "Cheque Bounce Cases",
-      "assignedAdvocate": "Senior Counsel In-Charge",
-      "consultationType": "In-Office",
-      "requestedDate": "2026-11-02",
-      "requestedTime": "10:00 AM",
-      "status": "Pending Review",
-      "stage": "Case Dossier Received & Assigned",
-      "urgency": "High",
-      "summary": "my name is manikumar",
-      "nextHearing": "2026-11-02",
-      "court": "SW Legal Hub Chamber, Madinaguda",
-      "caseNotes": "Consultation dossier registered. Senior legal associate scheduled to verify papers.",
-      "documents": [],
-      "createdAt": "2026-11-02T12:53:59.853Z"
-    }
-  ],
+  "consultations": [],
   "messages": []
 }
