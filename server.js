@@ -14,10 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Storage configuration for document uploads
+// Storage configuration for document uploads (with Vercel serverless /tmp fallback)
+const uploadDir = process.env.VERCEL ? path.join('/tmp', 'uploads') : path.join(__dirname, 'uploads');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const uploadDir = path.join(__dirname, 'uploads');
     if (!fs.existsSync(uploadDir)) {
       fs.mkdirSync(uploadDir, { recursive: true });
     }
@@ -34,22 +34,41 @@ const upload = multer({
   limits: { fileSize: 15 * 1024 * 1024 } // 15MB limit
 });
 
-// Database helper
-const DB_PATH = path.join(__dirname, 'data', 'database.json');
+// Database helper (with Vercel serverless /tmp fallback)
+const defaultDbPath = path.join(__dirname, 'data', 'database.json');
+let activeDbPath = defaultDbPath;
+
+if (process.env.VERCEL) {
+  const tmpPath = path.join('/tmp', 'database.json');
+  if (!fs.existsSync(tmpPath)) {
+    try {
+      fs.copyFileSync(defaultDbPath, tmpPath);
+    } catch (e) {
+      console.warn('Could not seed /tmp db:', e);
+    }
+  }
+  activeDbPath = tmpPath;
+}
 
 function readDb() {
   try {
-    const rawData = fs.readFileSync(DB_PATH, 'utf8');
+    const rawData = fs.readFileSync(activeDbPath, 'utf8');
     return JSON.parse(rawData);
   } catch (error) {
-    console.error('Error reading database:', error);
-    return { office: {}, advocates: [], practiceAreas: [], consultations: [], messages: [] };
+    // Fallback to default bundled db
+    try {
+      const rawData = fs.readFileSync(defaultDbPath, 'utf8');
+      return JSON.parse(rawData);
+    } catch (e) {
+      console.error('Error reading database:', error);
+      return { office: {}, advocates: [], practiceAreas: [], consultations: [], messages: [] };
+    }
   }
 }
 
 function writeDb(data) {
   try {
-    fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), 'utf8');
+    fs.writeFileSync(activeDbPath, JSON.stringify(data, null, 2), 'utf8');
     return true;
   } catch (error) {
     console.error('Error writing database:', error);
