@@ -384,6 +384,27 @@ window.deleteCase = async function(refId) {
   }
 };
 
+window.purgeAllDockets = async function() {
+  if (!confirm('Are you sure you want to permanently clear ALL case dockets? This will wipe all test/demo entries.')) return;
+  if (!authToken) return;
+
+  try {
+    const res = await fetch('/api/admin/consultations', {
+      method: 'DELETE',
+      headers: authHeaders()
+    });
+    const json = await res.json();
+    if (!json.success) throw new Error(json.message);
+
+    alert(json.message || 'All case dockets successfully cleared.');
+    allCases = [];
+    renderConsultationsTable(allCases);
+    loadStats();
+  } catch (err) {
+    alert(err.message || 'Failed to clear all dockets.');
+  }
+};
+
 window.openEditModal = function(refId) {
   const c = allCases.find(item => item.refId === refId);
   if (!c) return;

@@ -647,6 +647,20 @@ app.delete('/api/admin/consultations/:refId', requireAdminAuth, async (req, res)
   });
 });
 
+// Purge All Case Dockets from Admin (Protected)
+app.delete('/api/admin/consultations', requireAdminAuth, async (req, res) => {
+  const db = readDb();
+  const clearedCount = db.consultations.length;
+  db.consultations = [];
+  writeDb(db);
+  await syncToCloud(db);
+
+  res.json({
+    success: true,
+    message: `All ${clearedCount} case dockets have been permanently cleared.`
+  });
+});
+
 // Admin stats overview (Protected)
 app.get('/api/admin/stats', requireAdminAuth, async (req, res) => {
   await syncFromCloud();
