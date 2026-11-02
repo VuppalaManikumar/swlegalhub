@@ -1,0 +1,372 @@
+/* ==========================================================================
+   SW LEGAL HUB - BESPOKE LEGAL PORTAL STYLESHEET
+   Obsidian & Royal Gold Theme (Advocate. Advise. Achieve.)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --bg-primary: #070a0f;
+  --bg-secondary: #0d121c;
+  --bg-tertiary: #131a29;
+  --bg-card: rgba(16, 22, 36, 0.75);
+  --bg-glass: rgba(19, 26, 42, 0.65);
+  
+  --gold-300: #fae17d;
+  --gold-400: #e5be49;
+  --gold-500: #d4af37;
+  --gold-600: #b59022;
+  --gold-gradient: linear-gradient(135deg, #fceb92 0%, #d4af37 50%, #a47d12 100%);
+  --gold-glow: 0 0 25px rgba(212, 175, 55, 0.22);
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(212, 175, 55, 0.35);
+  --border-gold-hover: rgba(212, 175, 55, 0.8);
+
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(30, 58, 138, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(212, 175, 55, 0.03) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Typography classes */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-gold {
+  color: var(--gold-400);
+}
+
+.gold-gradient-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Luxury card styling */
+.legal-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.legal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  transition: opacity 0.35s ease;
+  opacity: 0;
+}
+
+.legal-card:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6), var(--gold-glow);
+}
+
+.legal-card:hover::before {
+  opacity: 1;
+}
+
+/* Gold Button Variants */
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #0b0f17;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45);
+  filter: brightness(1.05);
+}
+
+.btn-outline-gold {
+  background: rgba(212, 175, 55, 0.05);
+  color: var(--gold-400);
+  border: 1px solid var(--gold-500);
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-300);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background: #192233;
+  color: #e2e8f0;
+  border: 1px solid var(--border-subtle);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-dark:hover {
+  background: #222d42;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Advocate Card Special Layout */
+.advocate-badge-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 1.5px solid var(--gold-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-400);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+/* Ornamental Divider */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: var(--gold-500);
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+  flex-grow: 1;
+  max-width: 140px;
+}
+
+/* Practice Area Tabs */
+.tool-tab-btn {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tool-tab-btn.active {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--gold-500);
+  color: var(--gold-300);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+/* Case Tracking Step Bar */
+.track-step-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.track-step-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+  border: 2px solid #334155;
+  background: #0f172a;
+  color: #64748b;
+  transition: all 0.3s ease;
+}
+
+.track-step-circle.active {
+  background: var(--gold-gradient);
+  border-color: var(--gold-300);
+  color: #0b0f17;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.track-step-circle.completed {
+  background: #059669;
+  border-color: #10b981;
+  color: #ffffff;
+}
+
+/* NyayaBot Floating Button & Widget */
+#bot-launcher {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 990;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.35);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#bot-launcher:hover {
+  transform: scale(1.08);
+}
+
+#chat-window {
+  position: fixed;
+  bottom: 95px;
+  right: 26px;
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  height: 540px;
+  max-height: 80vh;
+  z-index: 991;
+  display: flex;
+  flex-direction: column;
+  background: #0e1422;
+  border: 1px solid var(--border-gold);
+  border-radius: 18px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.15);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.chat-bubble-user {
+  background: #1e293b;
+  color: #f8fafc;
+  border-bottom-right-radius: 2px;
+  margin-left: auto;
+}
+
+.chat-bubble-bot {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: #e2e8f0;
+  border-bottom-left-radius: 2px;
+  margin-right: auto;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* Subtle Pulsing Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.45);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d14;
+}
+::-webkit-scrollbar-thumb {
+  background: #232e44;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Mobile Emergency Sticky Ribbon */
+@media (max-width: 768px) {
+  .emergency-ribbon {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 980;
+    background: #090e1a;
+    border-top: 1px solid var(--border-gold);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.7);
+  }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 140" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+  </defs>
+  <!-- Collar -->
+  <path d="M 50 25 L 80 45 L 110 25 L 98 15 L 62 15 Z" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <polygon points="62,15 80,30 98,15" fill="#111827"/>
+
+  <!-- Left Neckband -->
+  <polygon points="66,35 60,82 74,85 75,37" fill="url(#bandGrad)" stroke="#d1d5db" stroke-width="0.8"/>
+  
+  <!-- Right Neckband -->
+  <polygon points="85,37 86,85 100,82 94,35" fill="url(#bandGrad)" stroke="#d1d5db" stroke-width="0.8"/>
+
+  <!-- Advocate Text -->
+  <text x="80" y="115" font-family="'Cinzel', 'Times New Roman', serif" font-size="16" font-weight="800" fill="#f3f4f6" text-anchor="middle" letter-spacing="3.5">
+    ADVOCATE
+  </text>
+  <line x1="35" y1="126" x2="125" y2="126" stroke="#d4af37" stroke-width="1.2" opacity="0.8"/>
+</svg>

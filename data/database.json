@@ -1,0 +1,385 @@
+{
+  "office": {
+    "name": "SW LEGAL HUB",
+    "tagline": "ADVOCATE. ADVISE. ACHIEVE.",
+    "motto": "COMMITTED TO JUSTICE. DEDICATED TO YOUR RIGHTS.",
+    "address": "SK. SIRAJ MANZIL, H.NO 1-58/3/2/A, PLOT NO. 74 B, BESIDE INDIAN OIL PETROLBUNK, MADINAGUDA, 500049",
+    "city": "Hyderabad, Telangana",
+    "pincode": "500049",
+    "landmark": "Beside Indian Oil Petrolbunk",
+    "phone": "88015 93599",
+    "phoneFormatted": "+91 88015 93599",
+    "whatsapp": "9346818069",
+    "whatsappFormatted": "+91 93468 18069",
+    "email": "swlegalhub9949@gmail.com",
+    "workingHours": {
+      "weekdays": "Monday - Saturday: 9:00 AM - 9:00 PM",
+      "sunday": "Sunday: 10:00 AM - 2:00 PM (By Prior Appointment)",
+      "emergency": "24/7 Rapid Legal & Bail Assistance Available"
+    }
+  },
+  "advocates": [
+    {
+      "id": "adv-ghouseddin",
+      "name": "Adv. Shaik Ghouseddin",
+      "qualifications": "B.Com, MBA, M.Com, Mass Sociology, Mass Psychology, LLB",
+      "role": "Managing Partner & Senior Legal Consultant",
+      "experienceYears": 18,
+      "specializations": [
+        "Civil Litigation",
+        "High-Value Commercial Disputes",
+        "Mediation & Arbitration",
+        "Constitutional Law"
+      ],
+      "languages": [
+        "English",
+        "Telugu",
+        "Hindi",
+        "Urdu"
+      ],
+      "bio": "Distinguished legal counsel combining multi-disciplinary expertise in commerce, psychology, and jurisprudence to deliver formidable courtroom defense and strategic counsel.",
+      "featured": true
+    },
+    {
+      "id": "adv-murtuza",
+      "name": "Adv. Shaik Murtuza",
+      "qualifications": "B.Com, LLB",
+      "role": "Senior Partner & Commercial Litigator",
+      "experienceYears": 14,
+      "specializations": [
+        "Civil Law",
+        "Property Title Verification",
+        "Injunctions & Partition Suits",
+        "Contract Enforcement"
+      ],
+      "languages": [
+        "English",
+        "Telugu",
+        "Hindi",
+        "Urdu"
+      ],
+      "bio": "Expert in property, land acquisition, and commercial dispute resolution with a strong track record across Telangana district and high courts.",
+      "featured": true
+    },
+    {
+      "id": "adv-salma",
+      "name": "Adv. Shaik Salma",
+      "qualifications": "B.Com, MBA, LLB",
+      "role": "Senior Associate & Family Law Specialist",
+      "experienceYears": 10,
+      "specializations": [
+        "Family Law",
+        "Matrimonial Disputes & Divorce",
+        "Child Custody & Maintenance",
+        "Domestic Violence Protection"
+      ],
+      "languages": [
+        "English",
+        "Telugu",
+        "Hindi",
+        "Urdu"
+      ],
+      "bio": "Empathetic yet tenacious advocate championing domestic rights, amicable marital dispute settlements, and strong family court trial advocacy.",
+      "featured": true
+    },
+    {
+      "id": "adv-fathima",
+      "name": "Adv. Shaik Fathima",
+      "qualifications": "BA.LLB",
+      "role": "Associate Advocate - Family & Civil Practice",
+      "experienceYears": 7,
+      "specializations": [
+        "Family Court Matters",
+        "Civil Writs",
+        "Women Legal Rights",
+        "Consumer Forum Disputes"
+      ],
+      "languages": [
+        "English",
+        "Telugu",
+        "Hindi"
+      ],
+      "bio": "Dedicated litigator focusing on women's legal empowerment, maintenance claims, and civil consumer remedies.",
+      "featured": false
+    },
+    {
+      "id": "adv-moizuddin",
+      "name": "Adv. Md. Moizuddin",
+      "qualifications": "BA.LLB",
+      "role": "Criminal Defense & Trial Counsel",
+      "experienceYears": 8,
+      "specializations": [
+        "Criminal Defense (BNS / IPC)",
+        "Regular & Anticipatory Bail",
+        "Police Station Representation",
+        "Trial Proceedings"
+      ],
+      "languages": [
+        "English",
+        "Telugu",
+        "Hindi",
+        "Urdu"
+      ],
+      "bio": "Fierce criminal trial litigator adept at immediate 24/7 bail interventions, police detention liaison, and criminal complaint quashing.",
+      "featured": false
+    },
+    {
+      "id": "adv-azaruddin",
+      "name": "Adv. Shaik Azaruddin",
+      "qualifications": "BA.LLB",
+      "role": "Cyber & Technology Law Specialist",
+      "experienceYears": 6,
+      "specializations": [
+        "Cybercrime Law",
+        "Bank Account Freeze Defreeze NOC",
+        "1930 Portal Escalations",
+        "Digital Financial Fraud",
+        "IT Act Offences"
+      ],
+      "languages": [
+        "English",
+        "Telugu",
+        "Hindi"
+      ],
+      "bio": "Specialized advocate handling online financial scams, unlawful bank account freezes by cyber cells across India, and electronic evidence cases.",
+      "featured": false
+    },
+    {
+      "id": "adv-imranuddin",
+      "name": "Adv. Shaik Imranuddin",
+      "qualifications": "BA.LLB",
+      "role": "Commercial & Negotiable Instruments Counsel",
+      "experienceYears": 7,
+      "specializations": [
+        "Cheque Bounce Cases (Sec 138 NI Act)",
+        "Statutory Demand Notices",
+        "Commercial Debt Recovery",
+        "Summary Suits"
+      ],
+      "languages": [
+        "English",
+        "Telugu",
+        "Hindi"
+      ],
+      "bio": "High-velocity debt recovery and cheque dishonor counsel with an extensive portfolio of successful recovery verdicts and out-of-court settlements.",
+      "featured": false
+    }
+  ],
+  "practiceAreas": [
+    {
+      "id": "family-law",
+      "title": "Family Law",
+      "icon": "Users",
+      "tagline": "Compassionate & Decisive Matrimonial Advocacy",
+      "description": "Comprehensive legal support for mutual and contested divorce, child custody battles, spousal & child maintenance (Sec 125 CrPC / BNSS), Domestic Violence (DV Act), restitution of conjugal rights, and partition of ancestral properties.",
+      "subServices": [
+        "Mutual Consent Divorce (Quick filing & waiver petitions)",
+        "Contested Divorce & Annulment Proceedings",
+        "Child Custody & Visitation Rights",
+        "Interim & Permanent Alimony / Maintenance",
+        "Domestic Violence & 498A Protection",
+        "Pre-litigation Family Mediation & Counselling"
+      ],
+      "leadAdvocate": "Adv. Shaik Salma & Adv. Shaik Fathima"
+    },
+    {
+      "id": "civil-law",
+      "title": "Civil Law",
+      "icon": "Scale",
+      "tagline": "Protecting Assets, Property & Contractual Rights",
+      "description": "Rigorous civil litigation covering real estate title verifications, boundary and encroachment disputes, partition suits, temporary and permanent injunctions, recovery of immovable property, and specific performance of contracts.",
+      "subServices": [
+        "Comprehensive 30-Year Property Title Search & Verification",
+        "Civil Injunction Suits & Stay Orders",
+        "Partition Suits & Ancestral Property Division",
+        "Contractual Disputes & Specific Performance",
+        "Land Encroachment, Boundary & Possession Suits",
+        "RERA & Consumer Forum Litigation"
+      ],
+      "leadAdvocate": "Adv. Shaik Ghouseddin & Adv. Shaik Murtuza"
+    },
+    {
+      "id": "criminal-law",
+      "title": "Criminal Law",
+      "icon": "Gavel",
+      "tagline": "Uncompromising Trial Defense & Immediate Liberty Protection",
+      "description": "Aggressive legal defense from police inquiry to High Court appeals. Rapid response for anticipatory and regular bail, quashing of malicious FIRs under Bharatiya Nyaya Sanhita (BNS) / IPC, white-collar crimes, and criminal trial defense.",
+      "subServices": [
+        "24/7 Immediate Anticipatory & Regular Bail Petitions",
+        "FIR Quashing & Criminal Revision Petitions",
+        "Police Station Remand Defense & Custody Representation",
+        "Economic Offences & White-Collar Crime Defense",
+        "Assault, Matrimonial & Property Crime Defense",
+        "High Court Criminal Appeals & Writs"
+      ],
+      "leadAdvocate": "Adv. Md. Moizuddin & Adv. Shaik Ghouseddin"
+    },
+    {
+      "id": "cybercrime-law",
+      "title": "Cybercrime Law",
+      "icon": "Laptop",
+      "tagline": "Forensic Legal Remedies in the Digital Age",
+      "description": "Specialized modern cyber law practice defending victims and entities against illegal bank account debit freezes, UPI fraud, crypto scams, cyber stalking, identity theft, unauthorized data breaches, and Section 66/67 IT Act violations.",
+      "subServices": [
+        "Bank Account Freeze De-Freezing & Cyber Cell NOC",
+        "1930 Cyber Fraud Portal Escalation & Recovery",
+        "Online Financial Scam Defense & Evidence Filing",
+        "Cyber Defamation, Stalking & Harassment Injunctions",
+        "Corporate Data Breach & Information Technology Act Compliance",
+        "Digital Forensics & Electronic Evidence Certification (Sec 65B)"
+      ],
+      "leadAdvocate": "Adv. Shaik Azaruddin"
+    },
+    {
+      "id": "cheque-bounce",
+      "title": "Cheque Bounce Cases",
+      "icon": "FileCheck",
+      "tagline": "Fast-Track Financial Recovery Under Sec 138 NI Act",
+      "description": "Precision handling of dishonored cheques for individuals, traders, and corporates. Strict statutory compliance from issuing the 15-day demand notice within 30 days to swift Magistrate Court trial proceedings and interim compensation orders.",
+      "subServices": [
+        "Drafting & Dispatch of Statutory 15-Day Demand Notice",
+        "Filing Criminal Complaint under Section 138 / 141 NI Act",
+        "Securing 20% Interim Compensation under Section 143A",
+        "Defense Representation Against Wrongful Cheque Dishonor Claims",
+        "High Court Quash Petitions & Compounding of Offences",
+        "Pre-Trial Commercial Settlement Negotiations"
+      ],
+      "leadAdvocate": "Adv. Shaik Imranuddin"
+    }
+  ],
+  "consultations": [
+    {
+      "refId": "SWL-2026-9215",
+      "clientName": "manikumar",
+      "phone": "9392280234",
+      "email": "",
+      "category": "Civil Law",
+      "assignedAdvocate": "Adv. Shaik Azaruddin",
+      "consultationType": "Phone Call",
+      "requestedDate": "2026-11-02",
+      "requestedTime": "11:30 AM",
+      "status": "Pending Review",
+      "stage": "Case Dossier Received & Assigned",
+      "urgency": "Normal",
+      "summary": "chesking the website",
+      "nextHearing": "2026-11-02",
+      "court": "SW Legal Hub Chamber, Madinaguda",
+      "caseNotes": "Consultation dossier registered. Senior legal associate scheduled to verify papers.",
+      "documents": [],
+      "createdAt": "2026-11-02T04:43:35.544Z"
+    },
+    {
+      "refId": "SWL-2026-8395",
+      "clientName": "Mohammed Arshad",
+      "phone": "9876500112",
+      "email": "arshad@example.com",
+      "category": "Cheque Bounce Cases",
+      "assignedAdvocate": "Adv. Shaik Imranuddin",
+      "consultationType": "In-Office",
+      "requestedDate": "2026-11-05",
+      "requestedTime": "11:30 AM",
+      "status": "In Progress",
+      "stage": "Statutory Demand Notice Dispatched via Speed Post",
+      "urgency": "High",
+      "summary": "Cheque of Rs 8 Lakhs returned with memo funds insufficient.",
+      "nextHearing": "2026-11-20",
+      "court": "Metropolitan Magistrate Court, Kukatpally",
+      "caseNotes": "15-day notice dispatched via Speed Post (Tracking: EK982341209IN). Awaiting drawer response.",
+      "documents": [],
+      "createdAt": "2026-11-02T03:09:34.274Z",
+      "updatedAt": "2026-11-02T03:10:02.798Z"
+    },
+    {
+      "refId": "SWL-2026-1042",
+      "clientName": "Ramesh K.",
+      "phone": "9849012345",
+      "email": "ramesh.k@example.com",
+      "category": "Cheque Bounce Cases",
+      "assignedAdvocate": "Adv. Shaik Imranuddin",
+      "consultationType": "In-Office",
+      "requestedDate": "2026-10-24",
+      "requestedTime": "11:30 AM",
+      "status": "In Progress",
+      "stage": "Statutory Notice Dispatched",
+      "urgency": "High",
+      "summary": "Dishonored business cheque of ₹14,50,000/- for supply of materials. Bank memo received.",
+      "nextHearing": "2026-11-15",
+      "court": "Hon'ble Metropolitan Magistrate Court, Kukatpally",
+      "caseNotes": "15-day statutory demand notice successfully served via Speed Post. Awaiting response or expiration of grace period to file Sec 138 complaint.",
+      "documents": [
+        "cheque_memo_scanned.pdf",
+        "tax_invoice_copy.pdf"
+      ],
+      "createdAt": "2026-10-24T10:15:00Z"
+    },
+    {
+      "refId": "SWL-2026-2189",
+      "clientName": "K. Sunitha Reddy",
+      "phone": "9876543210",
+      "email": "sunitha.r@example.com",
+      "category": "Cybercrime Law",
+      "assignedAdvocate": "Adv. Shaik Azaruddin",
+      "consultationType": "Video Call",
+      "requestedDate": "2026-10-28",
+      "requestedTime": "03:00 PM",
+      "status": "In Court",
+      "stage": "NOC Application Filed at Cyber Cell",
+      "urgency": "Emergency",
+      "summary": "Current bank account at HDFC Bank frozen due to a layered cyber complaint originating from Gujarat Cyber Cell.",
+      "nextHearing": "2026-11-08",
+      "court": "Cyberabad Police Commissionerate Cyber Cell & Judicial Magistrate",
+      "caseNotes": "Drafted representation proving bona fide merchant status and zero complicity in disputed UPI transaction. Requisition sent to investigating officer.",
+      "documents": [
+        "bank_freeze_letter.pdf",
+        "merchant_account_statements.pdf"
+      ],
+      "createdAt": "2026-10-28T09:40:00Z"
+    },
+    {
+      "refId": "SWL-2026-3401",
+      "clientName": "Syed Farooq",
+      "phone": "9988776655",
+      "email": "s.farooq@example.com",
+      "category": "Family Law",
+      "assignedAdvocate": "Adv. Shaik Salma",
+      "consultationType": "In-Office",
+      "requestedDate": "2026-11-01",
+      "requestedTime": "05:00 PM",
+      "status": "In Progress",
+      "stage": "Mutual Settlement Agreement Drafting",
+      "urgency": "Normal",
+      "summary": "Amicable separation and drafting of mutual consent divorce terms, child custody schedule, and permanent alimony.",
+      "nextHearing": "2026-11-10",
+      "court": "Family Court, Miyapur",
+      "caseNotes": "Mutual agreement clauses finalized between both counsels. First motion petition scheduled for formal presentation next week.",
+      "documents": [
+        "marriage_certificate.pdf",
+        "settlement_mou_draft.pdf"
+      ],
+      "createdAt": "2026-11-01T11:20:00Z"
+    },
+    {
+      "refId": "SWL-2026-4890",
+      "clientName": "Ch. Venkat Rao",
+      "phone": "9440112233",
+      "email": "venkat.rao@example.com",
+      "category": "Civil Law",
+      "assignedAdvocate": "Adv. Shaik Murtuza",
+      "consultationType": "In-Office",
+      "requestedDate": "2026-11-02",
+      "requestedTime": "10:30 AM",
+      "status": "Pending",
+      "stage": "Preliminary Title Deed Verification",
+      "urgency": "Normal",
+      "summary": "Purchasing 400 sq yards plot in Madinaguda / Chandanagar. Need 30-year link document verification and Encumbrance Certificate scrutiny.",
+      "nextHearing": "2026-11-05",
+      "court": "Pre-registration Legal Scrutiny Office",
+      "caseNotes": "Received sale deed chain from 1992 to 2024. Conducting Sub-Registrar record inspection.",
+      "documents": [
+        "link_deeds_chain.pdf"
+      ],
+      "createdAt": "2026-11-02T06:30:00Z"
+    }
+  ],
+  "messages": []
+}

@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SW LEGAL HUB | Advocates & Legal Consultants | Madinaguda, Hyderabad</title>
+  <meta name="description" content="SW LEGAL HUB - Advocate. Advise. Achieve. Committed to justice, dedicated to your rights. Specializing in Family Law, Civil Law, Criminal Defense, Cybercrime Law, and Cheque Bounce Cases (Sec 138 NI Act) at Madinaguda, Hyderabad.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Bespoke Obsidian & Gold Legal Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              300: '#fae17d',
+              400: '#e5be49',
+              500: '#d4af37',
+              600: '#b59022',
+            },
+            obsidian: {
+              900: '#070a0f',
+              800: '#0d121c',
+              700: '#131a29',
+              600: '#1a2337'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-obsidian-900 text-slate-100 antialiased selection:bg-amber-500 selection:text-black">
+
+  <!-- ========================================================================
+       BAR COUNCIL OF INDIA (BCI) RULE 36 MANDATORY DISCLAIMER MODAL
+       ======================================================================== -->
+  <div id="bci-modal" class="modal-overlay hidden">
+    <div class="legal-card max-w-xl w-full p-6 md:p-8 border-amber-500/50 shadow-2xl relative mx-4">
+      <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-800">
+        <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+          <i data-lucide="scale" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold font-serif text-white">Bar Council of India Disclaimer</h3>
+          <p class="text-xs text-slate-400">Compliance with BCI Rule 36 & Professional Ethics</p>
+        </div>
+      </div>
+
+      <div class="text-xs text-slate-300 space-y-3 max-h-[50vh] overflow-y-auto pr-2 leading-relaxed">
+        <p>
+          As per the rules of the <strong>Bar Council of India (BCI)</strong>, advocates and legal firms in India are strictly prohibited from soliciting work or advertising in any manner. By entering this website, you acknowledge and confirm the following:
+        </p>
+        <ul class="list-disc pl-5 space-y-1.5 text-slate-400">
+          <li>There has been no advertisement, personal communication, solicitation, invitation, or inducement of any sort whatsoever from <strong>SW Legal Hub</strong> or any of its advocates to solicit work through this website.</li>
+          <li>You are accessing this website voluntarily to gain information regarding our legal practice areas, team qualifications, and general procedural guidelines for your own informational purposes.</li>
+          <li>The contents of this portal do not constitute legal advice and do not create an advocate-client relationship. Users should seek formal legal counsel before acting upon any information.</li>
+        </ul>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between gap-3">
+        <span class="text-[11px] text-slate-500">SK. Siraj Manzil, Madinaguda, Hyderabad</span>
+        <button id="bci-accept-btn" class="btn-gold text-xs py-2.5 px-6">
+          I Acknowledge & Enter Portal &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       TOP UTILITY STRIP & EMERGENCY HOTLINE
+       ======================================================================== -->
+  <div class="bg-obsidian-800/90 border-b border-slate-800/80 text-xs py-2 px-4 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="flex items-center gap-1.5">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span class="hidden sm:inline">SK. Siraj Manzil, Beside Indian Oil Petrolbunk,</span> Madinaguda 500049
+        </span>
+        <span class="hidden md:flex items-center gap-1.5 border-l border-slate-700 pl-4">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400"></i>
+          Mon-Sat: 9:00 AM - 9:00 PM
+        </span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:8801593599" class="text-amber-300 font-bold hover:text-amber-200 flex items-center gap-1">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-amber-400 animate-pulse"></i>
+          <span>CALL: 88015 93599</span>
+        </a>
+        <span class="text-slate-600">|</span>
+        <a href="https://wa.me/919346818069?text=Hello%20SW%20Legal%20Hub,%20I%20need%20legal%20counsel" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 flex items-center gap-1">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>WhatsApp: 9346818069</span>
+        </a>
+        <span class="text-slate-600 hidden sm:inline">|</span>
+        <a href="/admin.html" class="hidden sm:inline-flex items-center gap-1 text-slate-400 hover:text-amber-300 transition-colors text-[11px] bg-slate-800/60 px-2 py-0.5 rounded border border-slate-700">
+          <i data-lucide="lock" class="w-3 h-3 text-amber-400"></i>
+          Advocate Portal
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MAIN NAVIGATION BAR
+       ======================================================================== -->
+  <header class="border-b border-slate-800 bg-obsidian-900/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Brand Logo & Motto -->
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+          <img src="/assets/logo.svg" alt="SW Legal Hub Emblem" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-amber-400 text-xs tracking-widest">•</span>
+            <span class="font-serif text-lg md:text-2xl font-black tracking-widest text-white">SW LEGAL HUB</span>
+            <span class="text-amber-400 text-xs tracking-widest">•</span>
+          </div>
+          <div class="text-[10px] md:text-xs tracking-[0.25em] font-semibold text-amber-400 font-sans uppercase">
+            Advocate. Advise. Achieve.
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#specializations" class="hover:text-amber-300 transition-colors">Practice Areas</a>
+        <a href="#advocates" class="hover:text-amber-300 transition-colors">Our Advocates</a>
+        <a href="#tracker-section" class="hover:text-amber-300 transition-colors flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          Case Tracker
+        </a>
+        <a href="#legal-tools" class="hover:text-amber-300 transition-colors">Legal Tools</a>
+        <a href="#booking-section" class="btn-gold text-xs py-2 px-4">
+          <i data-lucide="calendar-plus" class="w-3.5 h-3.5"></i>
+          Book Consultation
+        </a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-2">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-nav" class="hidden lg:hidden border-t border-slate-800 bg-obsidian-800 px-4 py-4 space-y-3">
+      <a href="#specializations" class="block text-sm text-slate-300 hover:text-amber-300 py-1">Practice Areas</a>
+      <a href="#advocates" class="block text-sm text-slate-300 hover:text-amber-300 py-1">Our Advocates</a>
+      <a href="#tracker-section" class="block text-sm text-amber-400 font-semibold py-1">Case & Consultation Tracker</a>
+      <a href="#legal-tools" class="block text-sm text-slate-300 hover:text-amber-300 py-1">Legal Tools & Calculators</a>
+      <a href="#booking-section" class="btn-gold text-xs py-2 w-full justify-center">
+        <i data-lucide="calendar-plus" class="w-3.5 h-3.5"></i>
+        Book Consultation
+      </a>
+      <a href="/admin.html" class="block text-xs text-slate-400 text-center pt-2 border-t border-slate-700">
+        Advocate & Chambers Admin Login
+      </a>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO SHOWCASE SECTION (MATCHING THE CARD)
+       ======================================================================== -->
+  <section id="hero" class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      
+      <!-- Top Card Crest Badge -->
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-slate-800/80 border border-amber-500/40 text-amber-300 text-xs font-semibold tracking-wider uppercase backdrop-blur-md">
+          <i data-lucide="shield-check" class="w-4 h-4 text-amber-400"></i>
+          <span>Bar Council Enrolled Advocates & Legal Consultants • Madinaguda</span>
+        </div>
+      </div>
+
+      <!-- Main Headline with Card Slogan -->
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="flex items-center justify-center gap-3 mb-2">
+          <span class="h-0.5 w-12 bg-gradient-to-r from-transparent to-amber-400"></span>
+          <h2 class="text-xs md:text-sm font-mono tracking-[0.35em] text-amber-400 uppercase font-bold">
+            ADVOCATE • ADVISE • ACHIEVE
+          </h2>
+          <span class="h-0.5 w-12 bg-gradient-to-l from-transparent to-amber-400"></span>
+        </div>
+
+        <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight my-4">
+          COMMITTED TO JUSTICE.<br>
+          <span class="gold-gradient-text">DEDICATED TO YOUR RIGHTS.</span>
+        </h1>
+
+        <p class="text-slate-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-8">
+          A full-service chambers of <strong>7 distinguished advocates</strong> bringing strategic litigation, empathetic counsel, and high-velocity trial advocacy across Telangana courts, Cyberabad, and High Court jurisdictions.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="#booking-section" class="btn-gold text-sm py-3.5 px-6 shadow-xl shadow-amber-500/20">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            Schedule Chamber Consultation
+          </a>
+          <a href="#tracker-section" class="btn-outline-gold text-sm py-3.5 px-6">
+            <i data-lucide="search" class="w-4 h-4"></i>
+            Track Case Status Live
+          </a>
+          <a href="tel:8801593599" class="btn-dark text-sm py-3.5 px-6 border-red-500/40 hover:border-red-400 text-red-200">
+            <i data-lucide="alert-octagon" class="w-4 h-4 text-red-400"></i>
+            24/7 Urgent Bail / Arrest Hotline
+          </a>
+        </div>
+      </div>
+
+      <!-- Card-Style 5 Practice Icons Bar (Exact Mirror of Image) -->
+      <div class="mt-14 pt-8 border-t border-slate-800/80">
+        <div class="text-center text-xs uppercase tracking-widest text-slate-500 font-bold mb-6">
+          Core Specialized Practice Divisions
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
+          
+          <a href="#specializations" class="legal-card p-4 text-center group hover:border-amber-400">
+            <div class="w-12 h-12 mx-auto mb-2 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <div class="font-serif font-bold text-xs uppercase tracking-wider text-slate-200 group-hover:text-amber-300">
+              Family Law
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Divorce, Custody, Maintenance & DV</p>
+          </a>
+
+          <a href="#specializations" class="legal-card p-4 text-center group hover:border-amber-400">
+            <div class="w-12 h-12 mx-auto mb-2 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="scale" class="w-6 h-6"></i>
+            </div>
+            <div class="font-serif font-bold text-xs uppercase tracking-wider text-slate-200 group-hover:text-amber-300">
+              Civil Law
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Property Disputes, Title & Partition</p>
+          </a>
+
+          <a href="#specializations" class="legal-card p-4 text-center group hover:border-amber-400">
+            <div class="w-12 h-12 mx-auto mb-2 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="gavel" class="w-6 h-6"></i>
+            </div>
+            <div class="font-serif font-bold text-xs uppercase tracking-wider text-slate-200 group-hover:text-amber-300">
+              Criminal Law
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Bail, Trial Defense, FIR Quashing</p>
+          </a>
+
+          <a href="#specializations" class="legal-card p-4 text-center group hover:border-amber-400">
+            <div class="w-12 h-12 mx-auto mb-2 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="laptop" class="w-6 h-6"></i>
+            </div>
+            <div class="font-serif font-bold text-xs uppercase tracking-wider text-slate-200 group-hover:text-amber-300">
+              Cybercrime Law
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Bank Freeze NOC & 1930 Fraud</p>
+          </a>
+
+          <a href="#specializations" class="legal-card p-4 text-center group hover:border-amber-400 col-span-2 sm:col-span-1">
+            <div class="w-12 h-12 mx-auto mb-2 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="file-check-2" class="w-6 h-6"></i>
+            </div>
+            <div class="font-serif font-bold text-xs uppercase tracking-wider text-slate-200 group-hover:text-amber-300">
+              Cheque Bounce Cases
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Sec 138 NI Act Recovery & Notice</p>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       LIVE CASE & CONSULTATION STATUS TRACKER ("NyayaTrack")
+       ======================================================================== -->
+  <section id="tracker-section" class="py-14 bg-obsidian-800/60 border-y border-slate-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2 border border-amber-500/20">
+          <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+          Client Transparency Portal
+        </div>
+        <h2 class="font-serif text-2xl md:text-3xl font-bold text-white">
+          Real-Time Case & Consultation Tracker
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto mt-1">
+          Enter your Docket Reference ID (e.g., <strong>SWL-2026-1042</strong>) or registered 10-digit mobile number to check procedural milestones and upcoming hearing dates.
+        </p>
+      </div>
+
+      <!-- Search Box -->
+      <form id="tracking-form" class="max-w-2xl mx-auto mb-4">
+        <div class="flex flex-col sm:flex-row gap-2">
+          <div class="relative flex-grow">
+            <i data-lucide="search" class="w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input type="text" id="track-input" 
+                   placeholder="Enter Docket ID (e.g. SWL-2026-1042) or Mobile No..." 
+                   class="w-full pl-11 pr-4 py-3 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors">
+          </div>
+          <button type="submit" class="btn-gold text-xs py-3 px-6 whitespace-nowrap">
+            <i data-lucide="radar" class="w-4 h-4"></i>
+            Track Docket Status
+          </button>
+        </div>
+      </form>
+
+      <!-- Test Quick-Lookup Badges for Immediate Evaluation -->
+      <div class="flex flex-wrap items-center justify-center gap-2 text-xs text-slate-400 mb-8">
+        <span class="text-slate-500">Quick Test Dockets:</span>
+        <button type="button" class="quick-track-badge px-2.5 py-1 rounded bg-slate-800 text-amber-300 hover:bg-slate-700 border border-slate-700 transition-colors" data-id="SWL-2026-1042">
+          SWL-2026-1042 (Cheque Notice)
+        </button>
+        <button type="button" class="quick-track-badge px-2.5 py-1 rounded bg-slate-800 text-amber-300 hover:bg-slate-700 border border-slate-700 transition-colors" data-id="SWL-2026-2189">
+          SWL-2026-2189 (Cyber Freeze NOC)
+        </button>
+        <button type="button" class="quick-track-badge px-2.5 py-1 rounded bg-slate-800 text-amber-300 hover:bg-slate-700 border border-slate-700 transition-colors" data-id="SWL-2026-3401">
+          SWL-2026-3401 (Family Court MOU)
+        </button>
+      </div>
+
+      <!-- Tracking Results Output Container -->
+      <div id="track-result" class="max-w-3xl mx-auto"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       TEAM OF ADVOCATES (ALL 7 LAWYERS FROM BUSINESS CARD)
+       ======================================================================== -->
+  <section id="advocates" class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="ornament-divider">
+          <i data-lucide="award" class="w-5 h-5 text-amber-400"></i>
+        </div>
+        <h2 class="font-serif text-3xl md:text-4xl font-extrabold text-white">
+          Our Team of Advocates
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">
+          Backed by multidisciplinary academic credentials in Law, Commerce, Business Administration, Sociology, and Psychology — delivering multidimensional legal strategy.
+        </p>
+      </div>
+
+      <!-- Advocates Grid populated dynamically by app.js from /api/advocates -->
+      <div id="advocates-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="col-span-full text-center py-10">
+          <div class="animate-spin text-amber-400 inline-block mb-2">
+            <i data-lucide="loader-2" class="w-8 h-8"></i>
+          </div>
+          <p class="text-sm text-slate-400">Loading advocate credentials...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       DETAILED PRACTICE AREAS & LITIGATION REMEDIES
+       ======================================================================== -->
+  <section id="specializations" class="py-16 bg-obsidian-800/40 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2 border border-amber-500/20">
+          Courtroom Expertise
+        </div>
+        <h2 class="font-serif text-3xl md:text-4xl font-extrabold text-white">
+          Specialized Practice Divisions
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">
+          Precision litigation across District Courts, Special Tribunals, Cyber Crime Police Cells, and Telangana High Court.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- 1. Family Law -->
+        <div class="legal-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <i data-lucide="users" class="w-6 h-6"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Section 125 / DV / HMA</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-white mb-2">Family Law</h3>
+            <p class="text-xs text-amber-400 font-semibold mb-3">Lead: Adv. Shaik Salma & Adv. Shaik Fathima</p>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Sensitive yet resolute counsel for matrimonial disputes, mutual consent divorce (Sec 13B), contested divorce, permanent alimony, maintenance enforcement, child custody, and domestic violence protection petitions.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-6">
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Fast-Track Mutual Consent Divorce</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Child Custody & Guardianship Petitions</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Maintenance & Interim Relief (Sec 125)</li>
+            </ul>
+          </div>
+          <button onclick="bookWithAdvocate('Adv. Shaik Salma', 'Family Law')" class="btn-outline-gold text-xs py-2 w-full justify-center">
+            Consult Family Advocates
+          </button>
+        </div>
+
+        <!-- 2. Civil Law -->
+        <div class="legal-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <i data-lucide="scale" class="w-6 h-6"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Title / Partition / Injunction</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-white mb-2">Civil Law & Real Estate</h3>
+            <p class="text-xs text-amber-400 font-semibold mb-3">Lead: Adv. Shaik Ghouseddin & Adv. Shaik Murtuza</p>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Thorough property due diligence across Hyderabad & Rangareddy. We examine 30-year Encumbrance Certificates (EC), Dharani/Pahani records, municipal approvals, and litigate partition, specific performance, and injunction suits.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-6">
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> 30-Year Property Title Search & Scrutiny</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Partition & Ancestral Inheritance Suits</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Temporary & Permanent Injunction Orders</li>
+            </ul>
+          </div>
+          <button onclick="bookWithAdvocate('Adv. Shaik Ghouseddin', 'Civil Law')" class="btn-outline-gold text-xs py-2 w-full justify-center">
+            Consult Civil Litigators
+          </button>
+        </div>
+
+        <!-- 3. Criminal Law -->
+        <div class="legal-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <i data-lucide="gavel" class="w-6 h-6"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">BNS / BNSS / Bail / Quash</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-white mb-2">Criminal Defense</h3>
+            <p class="text-xs text-amber-400 font-semibold mb-3">Lead: Adv. Md. Moizuddin & Adv. Shaik Ghouseddin</p>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              24/7 emergency legal intervention to safeguard constitutional liberty. Rapid drafting of Anticipatory Bail, Regular Bail, police station custody representation, and High Court Section 482 / BNSS petitions for quashing malicious FIRs.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-6">
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Immediate Anticipatory & Regular Bail</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> High Court FIR Quashing Petitions</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Criminal Trial Advocacy & Cross-Examination</li>
+            </ul>
+          </div>
+          <button onclick="bookWithAdvocate('Adv. Md. Moizuddin', 'Criminal Law')" class="btn-outline-gold text-xs py-2 w-full justify-center">
+            Consult Criminal Counsel
+          </button>
+        </div>
+
+        <!-- 4. Cybercrime Law -->
+        <div class="legal-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <i data-lucide="laptop" class="w-6 h-6"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">IT Act 2000 / NCRP 1930</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-white mb-2">Cybercrime Law & Bank Freezes</h3>
+            <p class="text-xs text-amber-400 font-semibold mb-3">Lead: Adv. Shaik Azaruddin</p>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Specialized legal defense against unjustified debit freezes on bank accounts triggered by interstate cyber police complaints. We obtain IO details, file bona fide merchant evidence, and secure Magistrate Court defreeze NOC orders.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-6">
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Cyber Cell Bank Account Defreeze NOC</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> 1930 Portal Complaint Resolution</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Digital Financial Fraud & Identity Theft</li>
+            </ul>
+          </div>
+          <button onclick="bookWithAdvocate('Adv. Shaik Azaruddin', 'Cybercrime Law')" class="btn-outline-gold text-xs py-2 w-full justify-center">
+            Resolve Bank Freeze / Cyber Case
+          </button>
+        </div>
+
+        <!-- 5. Cheque Bounce Cases -->
+        <div class="legal-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <i data-lucide="file-check-2" class="w-6 h-6"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Section 138 NI Act</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-white mb-2">Cheque Bounce (Sec 138 NI Act)</h3>
+            <p class="text-xs text-amber-400 font-semibold mb-3">Lead: Adv. Shaik Imranuddin</p>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Strict statutory compliance to recover dishonored cheque funds. Fast-track dispatch of the 15-day statutory demand notice within 30 days of the memo, filing criminal complaints before the Magistrate, and claiming 20% interim compensation.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-6">
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Mandatory 15-Day Demand Notice Drafting</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Filing Sec 138 Criminal Complaint in Court</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Securing 20% Interim Compensation (Sec 143A)</li>
+            </ul>
+          </div>
+          <button onclick="bookWithAdvocate('Adv. Shaik Imranuddin', 'Cheque Bounce Cases')" class="btn-outline-gold text-xs py-2 w-full justify-center">
+            Initiate Cheque Recovery
+          </button>
+        </div>
+
+        <!-- 6. Chamber Card & Emergency Hotline -->
+        <div class="legal-card p-6 flex flex-col justify-between bg-gradient-to-br from-amber-950/20 to-obsidian-800 border-amber-500/40">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 mb-4">
+              <i data-lucide="phone-forwarded" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-white mb-2">Immediate Chamber Access</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Located conveniently in Madinaguda, Hyderabad, beside Indian Oil Petrol Bunk. Walk-in consultations, pre-scheduled chamber appointments, or video conferences across India.
+            </p>
+            <div class="space-y-2 text-xs text-slate-300 mb-6">
+              <div class="flex items-center gap-2">
+                <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
+                <a href="tel:8801593599" class="font-bold text-white hover:text-amber-300">88015 93599</a>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+                <a href="https://wa.me/919346818069" target="_blank" class="font-bold text-emerald-400 hover:underline">9346818069 (WhatsApp)</a>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
+                <a href="mailto:swlegalhub9949@gmail.com" class="text-slate-300 hover:text-white">swlegalhub9949@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <a href="#booking-section" class="btn-gold text-xs py-2 w-full justify-center">
+            Schedule Immediate Chamber Slot
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       EXTREME LEGAL UTILITIES & CALCULATORS
+       ======================================================================== -->
+  <section id="legal-tools" class="py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2 border border-amber-500/20">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          Client Legal Utilities
+        </div>
+        <h2 class="font-serif text-3xl font-extrabold text-white">
+          Interactive Legal Calculators & Triage
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">
+          Instant tools designed for statutory deadlines, registration estimates, and cyber emergency protocols.
+        </p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+        <button class="tool-tab-btn active text-xs sm:text-sm" data-target="cheque-calc-panel">
+          <i data-lucide="file-check-2" class="w-4 h-4 inline mr-1 text-amber-400"></i>
+          Cheque Bounce 138 Timeline
+        </button>
+        <button class="tool-tab-btn text-xs sm:text-sm" data-target="stamp-calc-panel">
+          <i data-lucide="calculator" class="w-4 h-4 inline mr-1 text-amber-400"></i>
+          Telangana Stamp Duty Estimator
+        </button>
+        <button class="tool-tab-btn text-xs sm:text-sm" data-target="cyber-guide-panel">
+          <i data-lucide="shield-alert" class="w-4 h-4 inline mr-1 text-amber-400"></i>
+          Cyber Fraud & Bank Freeze Protocol
+        </button>
+      </div>
+
+      <!-- Panel 1: Cheque Bounce Calculator -->
+      <div id="cheque-calc-panel" class="tool-panel">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <div class="legal-card p-6">
+            <h3 class="text-lg font-bold font-serif text-white mb-2 flex items-center gap-2">
+              <i data-lucide="calendar-clock" class="w-5 h-5 text-amber-400"></i>
+              Statutory 30-Day Notice Calculator
+            </h3>
+            <p class="text-xs text-slate-300 mb-6">
+              Under Section 138 of the Negotiable Instruments Act, you have strictly <strong>30 days</strong> from the receipt of the Bank Return Memo to dispatch the statutory 15-day demand notice.
+            </p>
+            <form id="cheque-calc-form" class="space-y-4">
+              <div>
+                <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                  Bank Cheque Return Memo Date:
+                </label>
+                <input type="date" id="cheque-memo-date" 
+                       class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400">
+              </div>
+              <button type="submit" class="btn-gold text-xs py-2.5 w-full justify-center">
+                Compute Statutory Deadlines
+              </button>
+            </form>
+          </div>
+
+          <div id="cheque-calc-result"></div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Stamp Duty Calculator -->
+      <div id="stamp-calc-panel" class="tool-panel hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <div class="legal-card p-6">
+            <h3 class="text-lg font-bold font-serif text-white mb-2 flex items-center gap-2">
+              <i data-lucide="home" class="w-5 h-5 text-amber-400"></i>
+              Telangana Property Registration Charges
+            </h3>
+            <p class="text-xs text-slate-300 mb-6">
+              Estimate official Government Challan fee (Stamp Duty, Transfer Duty, and SRO Registration Fees) based on Registration Department rules.
+            </p>
+            <form id="stamp-calc-form" class="space-y-4">
+              <div>
+                <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                  Property Value / Agreement Consideration (INR ₹):
+                </label>
+                <input type="number" id="property-value-input" value="5000000" step="50000"
+                       class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white font-mono focus:outline-none focus:border-amber-400">
+              </div>
+              <div>
+                <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                  Document / Instrument Nature:
+                </label>
+                <select id="property-trans-type" class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400">
+                  <option value="sale_deed">Sale Deed (Standard 7.5% combined)</option>
+                  <option value="gift_family">Gift Deed (Family Members - Concessional)</option>
+                  <option value="partition">Partition Deed (Family Property)</option>
+                  <option value="mortgage">Mortgage Deed with Possession</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-gold text-xs py-2.5 w-full justify-center">
+                Calculate Registration Breakdown
+              </button>
+            </form>
+          </div>
+
+          <div id="stamp-calc-result"></div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Cyber Fraud Protocol -->
+      <div id="cyber-guide-panel" class="tool-panel hidden">
+        <div class="legal-card p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400">
+              <i data-lucide="shield-alert" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold font-serif text-white">48-Hour Emergency Cyber Protocol</h3>
+              <p class="text-xs text-slate-400">Immediate Action Guide for Bank Freezes & Unauthorized Financial Fraud</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div class="bg-obsidian-900 p-4 rounded-xl border border-slate-800">
+              <div class="text-amber-400 text-xs font-mono font-bold mb-1">STEP 01</div>
+              <div class="text-sm font-bold text-white mb-1">National 1930 Portal</div>
+              <p class="text-xs text-slate-300">
+                Immediately dial <strong>1930</strong> or file on <em>cybercrime.gov.in</em>. Preserve your Acknowledgement / NCRP Ticket ID number.
+              </p>
+            </div>
+
+            <div class="bg-obsidian-900 p-4 rounded-xl border border-slate-800">
+              <div class="text-amber-400 text-xs font-mono font-bold mb-1">STEP 02</div>
+              <div class="text-sm font-bold text-white mb-1">Bank Branch Requisition</div>
+              <p class="text-xs text-slate-300">
+                Obtain the Cyber Cell Police Station Name, State, Investigating Officer (IO) Email, and Crime Number from your Bank Manager.
+              </p>
+            </div>
+
+            <div class="bg-obsidian-900 p-4 rounded-xl border border-slate-800">
+              <div class="text-amber-400 text-xs font-mono font-bold mb-1">STEP 03</div>
+              <div class="text-sm font-bold text-white mb-1">Advocate Representation</div>
+              <p class="text-xs text-slate-300">
+                Retain counsel to submit bona fide invoices/KYC, prove zero collusion, and file petition under Sec 451/457 CrPC for de-freezing.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs text-slate-400">Adv. Shaik Azaruddin specializes in interstate bank account de-freeze litigations.</span>
+            <button onclick="bookWithAdvocate('Adv. Shaik Azaruddin', 'Cybercrime Law')" class="btn-gold text-xs py-2 px-5">
+              Submit Bank Freeze Case for Emergency Scrutiny &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       APPOINTMENT & CONSULTATION BOOKING WIZARD
+       ======================================================================== -->
+  <section id="booking-section" class="py-16 bg-obsidian-800/60 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2 border border-amber-500/20">
+          <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+          Direct Consultation Request
+        </div>
+        <h2 class="font-serif text-3xl font-extrabold text-white">
+          Schedule Chamber or Virtual Consultation
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">
+          Lock in a confidential consultation slot with our Senior Advocates at SK. Siraj Manzil, Madinaguda.
+        </p>
+      </div>
+
+      <div class="legal-card p-6 sm:p-8 border-amber-500/30">
+        <form id="consultation-form" class="space-y-6" enctype="multipart/form-data">
+          
+          <!-- Category & Advocate Choice -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                Practice Area Category <span class="text-amber-400">*</span>
+              </label>
+              <select name="category" id="consult-category" required 
+                      class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400">
+                <option value="Family Law">Family Law (Divorce / Custody / Maintenance / DV)</option>
+                <option value="Civil Law">Civil Law (Property Title / Partition / Injunction)</option>
+                <option value="Criminal Law">Criminal Law (Bail / FIR Quash / Trial Defense)</option>
+                <option value="Cybercrime Law">Cybercrime Law (Bank Freeze NOC / 1930 Fraud)</option>
+                <option value="Cheque Bounce Cases">Cheque Bounce Cases (Sec 138 NI Act Recovery)</option>
+                <option value="General Legal Counsel">General Legal Counsel / Document Drafting</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                Preferred Advocate
+              </label>
+              <select name="assignedAdvocate" id="consult-advocate" 
+                      class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400">
+                <!-- Populated dynamically -->
+                <option value="Senior Counsel In-Charge">Next Available Senior Counsel</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Mode, Date & Time -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                Consultation Mode
+              </label>
+              <select name="consultationType" class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400">
+                <option value="In-Office">In-Chambers (Madinaguda, Hyderabad)</option>
+                <option value="Video Call">Virtual Video Call (Google Meet / Zoom)</option>
+                <option value="Phone Call">Confidential Phone Consultation</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                Requested Date <span class="text-amber-400">*</span>
+              </label>
+              <input type="date" name="requestedDate" id="consult-date" required
+                     class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400">
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                Preferred Time Slot
+              </label>
+              <select name="requestedTime" class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400">
+                <option value="10:00 AM">10:00 AM - 11:30 AM</option>
+                <option value="11:30 AM">11:30 AM - 01:00 PM</option>
+                <option value="03:00 PM">03:00 PM - 05:00 PM</option>
+                <option value="05:30 PM">05:30 PM - 07:30 PM</option>
+                <option value="07:30 PM">07:30 PM - 09:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Client Details -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                Full Name <span class="text-amber-400">*</span>
+              </label>
+              <input type="text" name="clientName" required placeholder="Sri / Smt..."
+                     class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400">
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                WhatsApp / Mobile No. <span class="text-amber-400">*</span>
+              </label>
+              <input type="tel" name="phone" required placeholder="10-digit Mobile number"
+                     class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400">
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+                Urgency Level
+              </label>
+              <select name="urgency" class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400">
+                <option value="Normal">Normal (Routine advice)</option>
+                <option value="High">High (Upcoming court date / 30-day notice)</option>
+                <option value="Emergency">24/7 Emergency (Arrest / Bail / Account Freeze)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Summary & Details -->
+          <div>
+            <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+              Brief Overview of the Legal Dispute / Relief Sought:
+            </label>
+            <textarea name="summary" rows="3" placeholder="Provide key facts: disputed cheque amount, property survey number, FIR number, matrimonial dispute summary, etc."
+                      class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-400"></textarea>
+          </div>
+
+          <!-- Document Upload -->
+          <div>
+            <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">
+              Attach Case Documents (Optional - Max 5 files, e.g. Scanned Cheque, Sale Deed, FIR copy, Bank Freeze letter)
+            </label>
+            <div class="border-2 border-dashed border-slate-700 hover:border-amber-500/60 rounded-xl p-4 text-center cursor-pointer bg-obsidian-900/50 transition-colors">
+              <input type="file" name="documents" id="case-files" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" class="hidden">
+              <label for="case-files" class="cursor-pointer block">
+                <i data-lucide="upload-cloud" class="w-8 h-8 mx-auto text-amber-400 mb-1"></i>
+                <span class="text-xs text-slate-300 font-semibold block">Click to Browse or Drag Case Files Here</span>
+                <span class="text-[11px] text-slate-500">Supports PDF, DOCX, JPG, PNG (Up to 15MB each)</span>
+              </label>
+            </div>
+            <div id="selected-files-list" class="mt-2 space-y-1"></div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-2">
+            <button type="submit" class="btn-gold w-full py-3.5 text-sm justify-center shadow-lg shadow-amber-500/20">
+              <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+              Confirm & Book Chamber Appointment
+            </button>
+            <p class="text-center text-[11px] text-slate-500 mt-2">
+              Instant Reference Docket ID will be generated upon submission with direct WhatsApp confirmation.
+            </p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CHAMBERS LOCATION & CONTACT CARD (EXACT ADDRESS FROM CARD)
+       ======================================================================== -->
+  <section id="contact" class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- Left: Official Office Info -->
+        <div class="legal-card p-6 sm:p-8 flex flex-col justify-between border-amber-500/30">
+          <div>
+            <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
+              <img src="/assets/advocate-badge.svg" alt="Advocate Crest" class="w-12 h-12 object-contain">
+              <div>
+                <h3 class="font-serif text-2xl font-bold text-white tracking-wide">SW LEGAL HUB</h3>
+                <p class="text-xs text-amber-400 tracking-widest font-semibold uppercase">Advocates & Legal Consultants</p>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-xs sm:text-sm text-slate-300 mb-8">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-slate-400 text-xs uppercase font-semibold">Chambers Address</div>
+                  <div class="font-medium text-white leading-relaxed mt-0.5">
+                    SK. SIRAJ MANZIL, H.NO 1-58/3/2/A, PLOT NO. 74 B,<br>
+                    <span class="text-amber-300 font-semibold">BESIDE INDIAN OIL PETROLBUNK,</span><br>
+                    MADINAGUDA, HYDERABAD - 500049.
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
+                  <i data-lucide="phone-call" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-slate-400 text-xs uppercase font-semibold">Official Phone Line</div>
+                  <a href="tel:8801593599" class="font-bold text-lg text-amber-300 hover:underline">
+                    88015 93599
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-slate-400 text-xs uppercase font-semibold">WhatsApp Legal Desk</div>
+                  <a href="https://wa.me/919346818069" target="_blank" class="font-bold text-lg text-emerald-400 hover:underline">
+                    9346818069
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 flex-shrink-0">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-slate-400 text-xs uppercase font-semibold">Official Email</div>
+                  <a href="mailto:swlegalhub9949@gmail.com" class="font-medium text-slate-200 hover:text-white">
+                    swlegalhub9949@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-wrap gap-3 pt-6 border-t border-slate-800">
+            <a href="https://maps.google.com/?q=Madinaguda+Hyderabad+Beside+Indian+Oil+Petrolbunk" target="_blank" class="btn-dark text-xs py-2.5 px-4 flex-1 justify-center">
+              <i data-lucide="navigation" class="w-4 h-4 text-amber-400"></i>
+              Open in Google Maps
+            </a>
+            <a href="https://wa.me/919346818069?text=Hello%20SW%20Legal%20Hub,%20requesting%20chambers%20location" target="_blank" class="btn-gold text-xs py-2.5 px-4 flex-1 justify-center">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              WhatsApp Directions
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Contact Message Form -->
+        <div class="legal-card p-6 sm:p-8 border-slate-800">
+          <h3 class="font-serif text-xl font-bold text-white mb-2">Send Chamber Inquiry</h3>
+          <p class="text-xs text-slate-400 mb-6">Have a quick procedural question? Leave your message below and an associate advocate will call you back.</p>
+
+          <form id="contact-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs uppercase font-bold text-slate-300 mb-1">Your Name *</label>
+                <input type="text" id="contact-name" required placeholder="Full Name" 
+                       class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-xs sm:text-sm text-white focus:outline-none focus:border-amber-400">
+              </div>
+              <div>
+                <label class="block text-xs uppercase font-bold text-slate-300 mb-1">Contact Number *</label>
+                <input type="tel" id="contact-phone" required placeholder="Phone / WhatsApp" 
+                       class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-xs sm:text-sm text-white focus:outline-none focus:border-amber-400">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs uppercase font-bold text-slate-300 mb-1">Email Address</label>
+                <input type="email" id="contact-email" placeholder="email@example.com" 
+                       class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-xs sm:text-sm text-white focus:outline-none focus:border-amber-400">
+              </div>
+              <div>
+                <label class="block text-xs uppercase font-bold text-slate-300 mb-1">Subject</label>
+                <input type="text" id="contact-subject" placeholder="e.g. Legal Notice / Property Vetting" 
+                       class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-xs sm:text-sm text-white focus:outline-none focus:border-amber-400">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 mb-1">Message Details *</label>
+              <textarea id="contact-message" rows="4" required placeholder="Describe your legal matter in confidence..." 
+                        class="w-full px-3.5 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-xs sm:text-sm text-white focus:outline-none focus:border-amber-400"></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold text-xs py-3 w-full justify-center">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              Dispatch Confidential Note to Chambers
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER (WITH CARD ORNAMENTATION & MOTTO)
+       ======================================================================== -->
+  <footer class="bg-obsidian-950 border-t border-slate-800/80 pt-12 pb-16 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4">
+      
+      <!-- Card Motto Ornamental Box -->
+      <div class="p-6 rounded-2xl bg-obsidian-900 border border-amber-500/30 text-center mb-10 max-w-4xl mx-auto">
+        <div class="text-amber-400 font-serif text-sm tracking-[0.2em] mb-1">❧ SW LEGAL HUB ❧</div>
+        <div class="font-serif text-lg sm:text-xl font-bold text-white tracking-widest">
+          COMMITTED TO JUSTICE. DEDICATED TO YOUR RIGHTS.
+        </div>
+        <div class="text-[11px] text-slate-400 tracking-widest uppercase mt-1">
+          Advocate. Advise. Achieve.
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-slate-800">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="/assets/logo.svg" alt="SW Logo" class="w-8 h-8">
+            <span class="font-serif font-black text-lg text-white">SW LEGAL HUB</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm mb-3">
+            Premier legal practice based at Madinaguda, Hyderabad. Offering specialized advocacy in Family Law, Civil Property Disputes, Criminal Trials, Cyber Law, and Cheque Bounce Cases under Section 138 NI Act.
+          </p>
+          <div class="text-[11px] text-amber-400">
+            Madinaguda • Chandanagar • Miyapur • Kukatpally • Hyderabad • High Court of Telangana
+          </div>
+        </div>
+
+        <div>
+          <div class="font-serif font-bold text-white uppercase tracking-wider mb-3">Practice Areas</div>
+          <ul class="space-y-1.5 text-xs text-slate-400">
+            <li><a href="#specializations" class="hover:text-amber-300">Family & Matrimonial Law</a></li>
+            <li><a href="#specializations" class="hover:text-amber-300">Civil & Property Litigation</a></li>
+            <li><a href="#specializations" class="hover:text-amber-300">Criminal Defense & Bail</a></li>
+            <li><a href="#specializations" class="hover:text-amber-300">Cybercrime & Bank Defreeze</a></li>
+            <li><a href="#specializations" class="hover:text-amber-300">Cheque Bounce (Sec 138)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-serif font-bold text-white uppercase tracking-wider mb-3">Chamber Direct</div>
+          <ul class="space-y-1.5 text-xs text-slate-400">
+            <li>Call: <a href="tel:8801593599" class="text-amber-300 font-bold">88015 93599</a></li>
+            <li>WhatsApp: <a href="https://wa.me/919346818069" class="text-emerald-400 font-bold">9346818069</a></li>
+            <li>Email: <a href="mailto:swlegalhub9949@gmail.com" class="text-slate-300">swlegalhub9949@gmail.com</a></li>
+            <li><a href="/admin.html" class="text-slate-400 hover:text-amber-300 inline-flex items-center gap-1 mt-2">
+              <i data-lucide="lock" class="w-3 h-3 text-amber-400"></i> Advocate Office Login
+            </a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-2">
+        <div>
+          © 2026 SW Legal Hub. All rights reserved. Bar Council of India compliant portal.
+        </div>
+        <div>
+          SK. Siraj Manzil, Beside Indian Oil Petrolbunk, Madinaguda 500049
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       BOOKING CONFIRMATION MODAL
+       ======================================================================== -->
+  <div id="booking-success-modal" class="modal-overlay hidden">
+    <div class="legal-card max-w-lg w-full p-6 md:p-8 border-amber-500/60 shadow-2xl mx-4 text-center">
+      <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto mb-4 animate-bounce">
+        <i data-lucide="check" class="w-8 h-8"></i>
+      </div>
+
+      <h3 class="font-serif text-2xl font-bold text-white mb-1">Consultation Docket Scheduled</h3>
+      <p class="text-xs text-slate-300 mb-6">Your legal consultation has been logged with our chambers.</p>
+
+      <div class="p-4 rounded-xl bg-obsidian-900 border border-slate-800 text-left space-y-2 mb-6 text-xs">
+        <div class="flex justify-between border-b border-slate-800 pb-2">
+          <span class="text-slate-400 font-semibold uppercase">Docket Reference:</span>
+          <span id="modal-ref-id" class="font-mono font-bold text-amber-400 text-sm"></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Client:</span>
+          <span id="modal-client-name" class="font-bold text-white"></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Practice Area:</span>
+          <span id="modal-category" class="font-bold text-amber-300"></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Assigned Advocate:</span>
+          <span id="modal-advocate" class="font-bold text-white"></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Scheduled Slot:</span>
+          <span id="modal-datetime" class="font-bold text-slate-200"></span>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a id="modal-wa-btn" href="#" target="_blank" class="btn-gold text-xs py-2.5 flex-1 justify-center">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Confirm on WhatsApp
+        </a>
+        <button onclick="closeBookingModal()" class="btn-dark text-xs py-2.5 px-4">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SMART VIRTUAL LEGAL ASSISTANT ("NyayaBot") FLOATING WIDGET
+       ======================================================================== -->
+  <!-- Launcher Button -->
+  <button id="bot-launcher" onclick="toggleNyayaBot()" class="w-14 h-14 rounded-full bg-gradient-to-tr from-amber-500 to-amber-300 text-black flex items-center justify-center border-2 border-white/40 shadow-xl cursor-pointer" title="Chat with SW Legal AI Assistant">
+    <i data-lucide="bot" class="w-7 h-7"></i>
+  </button>
+
+  <!-- Chat Window -->
+  <div id="chat-window" class="hidden">
+    <!-- Header -->
+    <div class="p-3.5 bg-obsidian-800 border-b border-slate-800 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center">
+          <i data-lucide="scale" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <div class="text-xs font-bold text-white">SW Nyaya-Assistant</div>
+          <div class="text-[10px] text-emerald-400 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+            Online • Indian Law & Chambers Desk
+          </div>
+        </div>
+      </div>
+      <button id="chat-close-btn" type="button" onclick="closeNyayaBot()" class="text-slate-400 hover:text-white hover:bg-slate-700/60 p-1.5 rounded-lg transition-colors cursor-pointer" title="Close Assistant" aria-label="Close Assistant">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="pointer-events-none">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Messages Container -->
+    <div id="chat-messages" class="flex-1 p-3.5 overflow-y-auto space-y-2 text-xs">
+      <!-- Welcome message -->
+      <div class="chat-bubble-bot p-3 rounded-xl max-w-[90%] text-xs leading-relaxed">
+        👋 Welcome to <strong>SW Legal Hub</strong>. I can assist with immediate statutory rules regarding:
+        <br>• Cheque bounce 30-day notice limits
+        <br>• Bank account freeze de-freezing
+        <br>• Anticipatory & regular bail procedures
+        <br>• Property title & stamp duty guidelines
+        <br>• Scheduling consultations with our 7 advocates
+      </div>
+
+      <!-- Quick Chips -->
+      <div class="space-y-1.5 pt-1">
+        <div class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Frequently Asked:</div>
+        <div class="flex flex-wrap gap-1.5">
+          <button class="chat-chip text-[11px] bg-slate-800 hover:bg-slate-700 text-amber-300 px-2.5 py-1 rounded-full border border-slate-700 text-left" data-question="My cheque bounced, what are the steps?">
+            ⚖️ Cheque bounced?
+          </button>
+          <button class="chat-chip text-[11px] bg-slate-800 hover:bg-slate-700 text-amber-300 px-2.5 py-1 rounded-full border border-slate-700 text-left" data-question="My bank account was frozen by cyber police">
+            🔒 Bank account frozen?
+          </button>
+          <button class="chat-chip text-[11px] bg-slate-800 hover:bg-slate-700 text-amber-300 px-2.5 py-1 rounded-full border border-slate-700 text-left" data-question="How to apply for urgent bail?">
+            🚨 Urgent Bail procedure?
+          </button>
+          <button class="chat-chip text-[11px] bg-slate-800 hover:bg-slate-700 text-amber-300 px-2.5 py-1 rounded-full border border-slate-700 text-left" data-question="Where is your chamber located in Madinaguda?">
+            📍 Chamber address?
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Form -->
+    <form id="chat-form" class="p-2.5 border-t border-slate-800 bg-obsidian-800 flex gap-1.5">
+      <input type="text" id="chat-input" placeholder="Ask legal question or book slot..." 
+             class="flex-1 px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-amber-400">
+      <button type="submit" class="btn-gold p-2 rounded-lg">
+        <i data-lucide="send" class="w-4 h-4"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- Mobile Emergency Bottom Ribbon -->
+  <div class="emergency-ribbon md:hidden p-2.5 flex items-center justify-around">
+    <a href="tel:8801593599" class="btn-gold text-xs py-2 px-4 flex items-center gap-1">
+      <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+      Call 88015 93599
+    </a>
+    <a href="https://wa.me/919346818069?text=Hello%20SW%20Legal%20Hub,%20I%20need%20urgent%20legal%20counsel" target="_blank" class="bg-emerald-600 text-white font-bold text-xs py-2 px-4 rounded-lg flex items-center gap-1 shadow-lg">
+      <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+      WhatsApp
+    </a>
+  </div>
+
+  <!-- Main JavaScript App -->
+  <script src="/js/app.js"></script>
+  <script>
+    // Bulletproof close & toggle handlers for NyayaBot
+    function closeNyayaBot() {
+      var w = document.getElementById('chat-window');
+      if (w) w.classList.add('hidden');
+    }
+    function toggleNyayaBot() {
+      var w = document.getElementById('chat-window');
+      if (w) {
+        w.classList.toggle('hidden');
+        if (!w.classList.contains('hidden')) {
+          var inp = document.getElementById('chat-input');
+          if (inp) inp.focus();
+        }
+      }
+    }
+  </script>
+</body>
+</html>
