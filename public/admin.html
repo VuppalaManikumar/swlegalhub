@@ -53,28 +53,22 @@
           </label>
           <div class="relative">
             <i data-lucide="user" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-            <input type="text" id="login-username" required placeholder="e.g. swlegalhub" 
-                   value="swlegalhub"
+            <input type="text" id="login-username" required placeholder="Enter Username or Email" 
+                   autocomplete="username"
                    class="w-full pl-9 pr-3 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-amber-400">
           </div>
         </div>
 
         <div>
           <label class="block text-slate-300 font-semibold mb-1 uppercase tracking-wider">
-            Password or Chamber PIN *
+            Password *
           </label>
           <div class="relative">
             <i data-lucide="lock" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-            <input type="password" id="login-password" required placeholder="Enter password or PIN" 
-                   value="SWLegal@2026"
+            <input type="password" id="login-password" required placeholder="Enter Password" 
+                   autocomplete="current-password"
                    class="w-full pl-9 pr-3 py-2.5 bg-obsidian-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-amber-400">
           </div>
-        </div>
-
-        <div class="p-3 rounded-lg bg-amber-950/20 border border-amber-800/30 text-[11px] text-slate-300">
-          <div class="text-amber-400 font-bold mb-0.5">Default Chamber Credentials:</div>
-          <div>Username: <strong class="text-white font-mono">swlegalhub</strong></div>
-          <div>Password: <strong class="text-white font-mono">SWLegal@2026</strong> <span class="text-slate-400">(or PIN: 9949)</span></div>
         </div>
 
         <button type="submit" id="login-submit-btn" class="btn-gold w-full py-3 text-xs justify-center shadow-lg shadow-amber-500/20 font-bold">

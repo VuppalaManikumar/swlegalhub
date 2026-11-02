@@ -2,8 +2,8 @@
   "adminAuth": {
     "username": "swlegalhub",
     "email": "swlegalhub9949@gmail.com",
-    "password": "SWLegal@2026",
-    "pin": "9949"
+    "password": "9949084473",
+    "pin": "9949084473"
   },
   "office": {
     "name": "SW LEGAL HUB",
@@ -255,47 +255,6 @@
   ],
   "consultations": [
     {
-      "refId": "SWL-2026-9215",
-      "clientName": "manikumar",
-      "phone": "9392280234",
-      "email": "",
-      "category": "Civil Law",
-      "assignedAdvocate": "Adv. Shaik Azaruddin",
-      "consultationType": "Phone Call",
-      "requestedDate": "2026-11-02",
-      "requestedTime": "11:30 AM",
-      "status": "Pending Review",
-      "stage": "Case Dossier Received & Assigned",
-      "urgency": "Normal",
-      "summary": "chesking the website",
-      "nextHearing": "2026-11-02",
-      "court": "SW Legal Hub Chamber, Madinaguda",
-      "caseNotes": "Consultation dossier registered. Senior legal associate scheduled to verify papers.",
-      "documents": [],
-      "createdAt": "2026-11-02T04:43:35.544Z"
-    },
-    {
-      "refId": "SWL-2026-8395",
-      "clientName": "Mohammed Arshad",
-      "phone": "9876500112",
-      "email": "arshad@example.com",
-      "category": "Cheque Bounce Cases",
-      "assignedAdvocate": "Adv. Shaik Imranuddin",
-      "consultationType": "In-Office",
-      "requestedDate": "2026-11-05",
-      "requestedTime": "11:30 AM",
-      "status": "In Progress",
-      "stage": "Statutory Demand Notice Dispatched via Speed Post",
-      "urgency": "High",
-      "summary": "Cheque of Rs 8 Lakhs returned with memo funds insufficient.",
-      "nextHearing": "2026-11-20",
-      "court": "Metropolitan Magistrate Court, Kukatpally",
-      "caseNotes": "15-day notice dispatched via Speed Post (Tracking: EK982341209IN). Awaiting drawer response.",
-      "documents": [],
-      "createdAt": "2026-11-02T03:09:34.274Z",
-      "updatedAt": "2026-11-02T03:10:02.798Z"
-    },
-    {
       "refId": "SWL-2026-1042",
       "clientName": "Ramesh K.",
       "phone": "9849012345",
@@ -305,7 +264,7 @@
       "consultationType": "In-Office",
       "requestedDate": "2026-10-24",
       "requestedTime": "11:30 AM",
-      "status": "In Progress",
+      "status": "In Court",
       "stage": "Statutory Notice Dispatched",
       "urgency": "High",
       "summary": "Dishonored business cheque of ₹14,50,000/- for supply of materials. Bank memo received.",
@@ -316,7 +275,8 @@
         "cheque_memo_scanned.pdf",
         "tax_invoice_copy.pdf"
       ],
-      "createdAt": "2026-10-24T10:15:00Z"
+      "createdAt": "2026-10-24T10:15:00Z",
+      "updatedAt": "2026-11-02T05:58:17.664Z"
     },
     {
       "refId": "SWL-2026-2189",

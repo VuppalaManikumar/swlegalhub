@@ -386,8 +386,8 @@ app.post('/api/admin/login', (req, res) => {
   const auth = db.adminAuth || {
     username: 'swlegalhub',
     email: 'swlegalhub9949@gmail.com',
-    password: 'SWLegal@2026',
-    pin: '9949'
+    password: '9949084473',
+    pin: '9949084473'
   };
 
   const u = username.trim().toLowerCase();
@@ -469,6 +469,24 @@ app.put('/api/admin/consultations/:refId', requireAdminAuth, (req, res) => {
     success: true,
     message: `Record ${refId} successfully updated.`,
     data: updated
+  });
+});
+
+// Delete Case / Consultation from Admin (Protected)
+app.delete('/api/admin/consultations/:refId', requireAdminAuth, (req, res) => {
+  const db = readDb();
+  const refId = req.params.refId;
+  const initialLength = db.consultations.length;
+  db.consultations = db.consultations.filter(c => c.refId.toLowerCase() !== refId.toLowerCase());
+
+  if (db.consultations.length === initialLength) {
+    return res.status(404).json({ success: false, message: 'Case record not found.' });
+  }
+
+  writeDb(db);
+  res.json({
+    success: true,
+    message: `Docket ${refId} has been successfully deleted.`
   });
 });
 

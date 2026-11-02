@@ -246,10 +246,19 @@ function renderConsultationsTable(cases) {
         </td>
 
         <td class="py-3 px-4">
-          <span class="inline-block px-2 py-0.5 rounded text-[11px] font-semibold border ${badge}">
-            ${c.status}
-          </span>
-          <div class="text-slate-400 text-[11px] mt-1">${c.stage || 'Dossier Logged'}</div>
+          <div class="flex items-center gap-1.5 mb-1">
+            <select id="status-select-${c.refId}" class="px-2 py-1 bg-obsidian-900 border border-slate-700 rounded text-[11px] text-white focus:outline-none focus:border-amber-400 font-semibold cursor-pointer">
+              <option value="Pending Review" ${c.status === 'Pending Review' || c.status === 'Pending' ? 'selected' : ''}>Pending Review</option>
+              <option value="In Progress" ${c.status === 'In Progress' ? 'selected' : ''}>In Progress</option>
+              <option value="In Court" ${c.status === 'In Court' ? 'selected' : ''}>In Court / Trial</option>
+              <option value="Completed" ${c.status === 'Completed' ? 'selected' : ''}>Completed / Decreed</option>
+              <option value="Closed" ${c.status === 'Closed' ? 'selected' : ''}>Closed / Settled</option>
+            </select>
+            <button onclick="saveStatus('${c.refId}')" id="save-status-btn-${c.refId}" class="btn-gold text-[10px] py-1 px-2.5 rounded font-bold cursor-pointer transition-all active:scale-95 shadow" title="Save Status">
+              Save
+            </button>
+          </div>
+          <div class="text-slate-400 text-[11px] truncate max-w-[180px]" title="${c.stage || ''}">Stage: ${c.stage || 'Dossier Logged'}</div>
         </td>
 
         <td class="py-3 px-4">
@@ -261,8 +270,11 @@ function renderConsultationsTable(cases) {
 
         <td class="py-3 px-4 text-right">
           <div class="flex items-center justify-end gap-1.5">
-            <button onclick="openEditModal('${c.refId}')" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700" title="Update Docket">
+            <button onclick="openEditModal('${c.refId}')" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700" title="Edit Full Docket Details">
               <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+            </button>
+            <button onclick="deleteCase('${c.refId}')" class="p-1.5 rounded bg-slate-800 hover:bg-red-900/60 text-slate-400 hover:text-red-300 border border-slate-700 cursor-pointer" title="Delete Case Record">
+              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
             </button>
             <a href="tel:${c.phone}" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700" title="Call Client">
               <i data-lucide="phone" class="w-3.5 h-3.5"></i>
@@ -275,6 +287,67 @@ function renderConsultationsTable(cases) {
 
   if (window.lucide) window.lucide.createIcons();
 }
+
+window.saveStatus = async function(refId) {
+  const select = document.getElementById(`status-select-${refId}`);
+  const btn = document.getElementById(`save-status-btn-${refId}`);
+  if (!select || !btn || !authToken) return;
+
+  const newStatus = select.value;
+  const originalText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = `<i data-lucide="loader-2" class="w-3 h-3 animate-spin"></i>`;
+  if (window.lucide) window.lucide.createIcons();
+
+  try {
+    const res = await fetch(`/api/admin/consultations/${encodeURIComponent(refId)}`, {
+      method: 'PUT',
+      headers: authHeaders(),
+      body: JSON.stringify({ status: newStatus })
+    });
+    const json = await res.json();
+    if (!json.success) throw new Error(json.message);
+
+    // Update in local array
+    const item = allCases.find(c => c.refId === refId);
+    if (item) item.status = newStatus;
+
+    btn.className = "bg-emerald-600 text-white text-[10px] py-1 px-2.5 rounded font-bold transition-all shadow";
+    btn.innerHTML = "Saved ✓";
+    loadStats();
+
+    setTimeout(() => {
+      btn.className = "btn-gold text-[10px] py-1 px-2.5 rounded font-bold cursor-pointer transition-all active:scale-95 shadow";
+      btn.innerHTML = "Save";
+      btn.disabled = false;
+    }, 1800);
+  } catch (err) {
+    alert(err.message || 'Failed to update status');
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+  }
+};
+
+window.deleteCase = async function(refId) {
+  if (!confirm(`Are you sure you want to permanently delete Docket ${refId}?`)) return;
+  if (!authToken) return;
+
+  try {
+    const res = await fetch(`/api/admin/consultations/${encodeURIComponent(refId)}`, {
+      method: 'DELETE',
+      headers: authHeaders()
+    });
+    const json = await res.json();
+    if (!json.success) throw new Error(json.message);
+
+    alert(`Case ${refId} has been successfully deleted.`);
+    allCases = allCases.filter(c => c.refId !== refId);
+    renderConsultationsTable(allCases);
+    loadStats();
+  } catch (err) {
+    alert(err.message || 'Failed to delete case.');
+  }
+};
 
 window.openEditModal = function(refId) {
   const c = allCases.find(item => item.refId === refId);
