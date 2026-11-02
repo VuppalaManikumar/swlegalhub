@@ -181,17 +181,21 @@ function initTracking() {
   const form = document.getElementById('tracking-form');
   const input = document.getElementById('track-input');
   const resultContainer = document.getElementById('track-result');
-  const quickTestBtns = document.querySelectorAll('.quick-track-badge');
+  const recentHint = document.getElementById('recent-docket-hint');
+  const recentBtn = document.getElementById('recent-docket-btn');
 
-  quickTestBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.getAttribute('data-id');
+  // Check if client has a recent docket from this device
+  const lastDocket = localStorage.getItem('sw_last_docket');
+  if (lastDocket && recentHint && recentBtn) {
+    recentBtn.textContent = lastDocket;
+    recentHint.classList.remove('hidden');
+    recentBtn.addEventListener('click', () => {
       if (input) {
-        input.value = id;
-        performTrack(id);
+        input.value = lastDocket;
+        performTrack(lastDocket);
       }
     });
-  });
+  }
 
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -467,6 +471,17 @@ function initBookingWizard() {
 }
 
 function showBookingSuccessModal(dossier, whatsappLink) {
+  // Store recent booking for client tracking convenience
+  try {
+    localStorage.setItem('sw_last_docket', dossier.refId);
+    const recentHint = document.getElementById('recent-docket-hint');
+    const recentBtn = document.getElementById('recent-docket-btn');
+    if (recentHint && recentBtn) {
+      recentBtn.textContent = dossier.refId;
+      recentHint.classList.remove('hidden');
+    }
+  } catch (e) {}
+
   const modal = document.getElementById('booking-success-modal');
   if (!modal) {
     alert(`Consultation booked successfully!\nReference ID: ${dossier.refId}`);

@@ -179,6 +179,10 @@
         </div>
 
         <div class="flex items-center gap-2">
+          <button onclick="openNewDocketModal()" class="btn-gold text-xs py-2 px-3 shadow flex items-center gap-1.5 cursor-pointer">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span>+ New Docket</span>
+          </button>
           <button id="view-messages-btn" class="btn-dark text-xs py-2 px-3">
             <i data-lucide="inbox" class="w-4 h-4 text-amber-400"></i>
             Inquiry Messages
@@ -311,6 +315,116 @@
       <div id="messages-list" class="flex-1 overflow-y-auto space-y-3 pr-2 text-xs">
         <div class="text-slate-400 text-center py-6">No general inquiries logged yet.</div>
       </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL: CREATE NEW CASE DOCKET (CHAMBERS DESK)
+       ======================================================================== -->
+  <div id="new-docket-modal" class="modal-overlay hidden">
+    <div class="legal-card max-w-xl w-full p-6 border-amber-500/50 shadow-2xl relative mx-4 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+        <div>
+          <h3 class="text-lg font-bold font-serif text-white flex items-center gap-2">
+            <i data-lucide="folder-plus" class="w-5 h-5 text-amber-400"></i>
+            Create New Case Docket
+          </h3>
+          <p class="text-xs text-slate-400">Log walk-in client or direct consultation from chambers desk</p>
+        </div>
+        <button onclick="closeNewDocketModal()" class="text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="new-docket-form" class="space-y-4 text-xs">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-400 font-semibold mb-1">Client Full Name *</label>
+            <input type="text" id="new-client-name" required placeholder="Sri / Smt..."
+                   class="w-full px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-white">
+          </div>
+          <div>
+            <label class="block text-slate-400 font-semibold mb-1">WhatsApp / Phone *</label>
+            <input type="tel" id="new-phone" required placeholder="10-digit mobile"
+                   class="w-full px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-white">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-400 font-semibold mb-1">Practice Discipline</label>
+            <select id="new-category" class="w-full px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-white">
+              <option value="Family Law">Family Law</option>
+              <option value="Civil Law">Civil Law</option>
+              <option value="Criminal Law">Criminal Law</option>
+              <option value="Cybercrime Law">Cybercrime Law</option>
+              <option value="Cheque Bounce Cases">Cheque Bounce Cases</option>
+              <option value="General Legal Counsel">General Legal Counsel</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-400 font-semibold mb-1">Assigned Advocate</label>
+            <select id="new-advocate" class="w-full px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-white">
+              <option value="Adv. Shaik Ghouseddin">Adv. Shaik Ghouseddin</option>
+              <option value="Adv. Shaik Murtuza">Adv. Shaik Murtuza</option>
+              <option value="Adv. Shaik Salma">Adv. Shaik Salma</option>
+              <option value="Adv. Shaik Fathima">Adv. Shaik Fathima</option>
+              <option value="Adv. Md. Moizuddin">Adv. Md. Moizuddin</option>
+              <option value="Adv. Shaik Azaruddin">Adv. Shaik Azaruddin</option>
+              <option value="Adv. Shaik Imranuddin">Adv. Shaik Imranuddin</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-400 font-semibold mb-1">Initial Status</label>
+            <select id="new-status" class="w-full px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-white">
+              <option value="Pending Review">Pending Review</option>
+              <option value="In Progress">In Progress</option>
+              <option value="In Court">In Court / Trial</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-400 font-semibold mb-1">Urgency</label>
+            <select id="new-urgency" class="w-full px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-white">
+              <option value="Normal">Normal</option>
+              <option value="High">High</option>
+              <option value="Emergency">Emergency</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-400 font-semibold mb-1">Current Stage / Milestone</label>
+          <input type="text" id="new-stage" placeholder="e.g. Initial Title Deed Scrutiny / Statutory Notice Served"
+                 class="w-full px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-white">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-400 font-semibold mb-1">Court / Forum</label>
+            <input type="text" id="new-court" placeholder="e.g. Miyapur Family Court / Chamber"
+                   class="w-full px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-white">
+          </div>
+          <div>
+            <label class="block text-slate-400 font-semibold mb-1">Next Hearing / Appointment</label>
+            <input type="date" id="new-next-hearing"
+                   class="w-full px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-white">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-400 font-semibold mb-1">Case Brief / Summary</label>
+          <textarea id="new-summary" rows="2" placeholder="Brief facts of dispute..."
+                    class="w-full px-3 py-2 bg-obsidian-900 border border-slate-700 rounded-lg text-white"></textarea>
+        </div>
+
+        <div class="pt-2 flex justify-end gap-2 border-t border-slate-800">
+          <button type="button" onclick="closeNewDocketModal()" class="btn-dark text-xs py-2 px-4">Cancel</button>
+          <button type="submit" id="new-docket-submit-btn" class="btn-gold text-xs py-2 px-5">Generate & Save Docket</button>
+        </div>
+      </form>
     </div>
   </div>
 

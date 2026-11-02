@@ -294,7 +294,7 @@
           Real-Time Case & Consultation Tracker
         </h2>
         <p class="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto mt-1">
-          Enter your Docket Reference ID (e.g., <strong>SWL-2026-1042</strong>) or registered 10-digit mobile number to check procedural milestones and upcoming hearing dates.
+          Enter your Docket Reference ID (e.g., <strong>SWL-2026-XXXX</strong>) or registered 10-digit mobile number to check procedural milestones and upcoming hearing dates.
         </p>
       </div>
 
@@ -304,7 +304,7 @@
           <div class="relative flex-grow">
             <i data-lucide="search" class="w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
             <input type="text" id="track-input" 
-                   placeholder="Enter Docket ID (e.g. SWL-2026-1042) or Mobile No..." 
+                   placeholder="Enter Docket ID (e.g. SWL-2026-XXXX) or 10-Digit Mobile No..." 
                    class="w-full pl-11 pr-4 py-3 bg-obsidian-900 border border-slate-700 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors">
           </div>
           <button type="submit" class="btn-gold text-xs py-3 px-6 whitespace-nowrap">
@@ -314,18 +314,10 @@
         </div>
       </form>
 
-      <!-- Test Quick-Lookup Badges for Immediate Evaluation -->
-      <div class="flex flex-wrap items-center justify-center gap-2 text-xs text-slate-400 mb-8">
-        <span class="text-slate-500">Quick Test Dockets:</span>
-        <button type="button" class="quick-track-badge px-2.5 py-1 rounded bg-slate-800 text-amber-300 hover:bg-slate-700 border border-slate-700 transition-colors" data-id="SWL-2026-1042">
-          SWL-2026-1042 (Cheque Notice)
-        </button>
-        <button type="button" class="quick-track-badge px-2.5 py-1 rounded bg-slate-800 text-amber-300 hover:bg-slate-700 border border-slate-700 transition-colors" data-id="SWL-2026-2189">
-          SWL-2026-2189 (Cyber Freeze NOC)
-        </button>
-        <button type="button" class="quick-track-badge px-2.5 py-1 rounded bg-slate-800 text-amber-300 hover:bg-slate-700 border border-slate-700 transition-colors" data-id="SWL-2026-3401">
-          SWL-2026-3401 (Family Court MOU)
-        </button>
+      <!-- Dynamic Recent Docket for returning client -->
+      <div id="recent-docket-hint" class="hidden flex flex-wrap items-center justify-center gap-2 text-xs text-slate-400 mb-6">
+        <span class="text-slate-500">Your Recent Booking:</span>
+        <button type="button" id="recent-docket-btn" class="px-3 py-1 rounded bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 border border-amber-500/30 transition-colors font-mono font-bold"></button>
       </div>
 
       <!-- Tracking Results Output Container -->

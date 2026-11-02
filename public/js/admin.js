@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loadConsultations();
   });
 
+  // New Docket Form
+  document.getElementById('new-docket-form')?.addEventListener('submit', handleCreateDocket);
+
   // Search & Filters
   document.getElementById('admin-search-input')?.addEventListener('input', applyFilters);
   document.getElementById('status-filter')?.addEventListener('change', applyFilters);
@@ -30,6 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Logout
   document.getElementById('logout-btn')?.addEventListener('click', handleLogout);
+
+  // Live Auto-Refresh Polling: Checks for new consultations every 10 seconds automatically
+  setInterval(() => {
+    if (authToken) {
+      loadStats();
+      loadConsultations(true);
+    }
+  }, 10000);
 });
 
 /* --------------------------------------------------------------------------
@@ -152,11 +163,16 @@ async function loadStats() {
   }
 }
 
-async function loadConsultations() {
+async function loadConsultations(isSilent = false) {
   if (!authToken) return;
 
   const tbody = document.getElementById('cases-tbody');
   if (!tbody) return;
+
+  if (!isSilent && allCases.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7" class="text-center py-8 text-slate-400"><i data-lucide="loader" class="w-6 h-6 animate-spin mx-auto text-amber-400 mb-2"></i>Loading dockets...</td></tr>`;
+    if (window.lucide) window.lucide.createIcons();
+  }
 
   try {
     const res = await fetch('/api/admin/consultations', {
@@ -171,17 +187,19 @@ async function loadConsultations() {
     const json = await res.json();
     if (!json.success) throw new Error('Failed to load dockets');
 
-    allCases = json.data;
-    renderConsultationsTable(allCases);
+    allCases = json.data || [];
+    applyFilters();
   } catch (err) {
-    tbody.innerHTML = `<tr><td colspan="7" class="text-center py-6 text-red-400">Failed to load docket records.</td></tr>`;
+    if (!isSilent) {
+      tbody.innerHTML = `<tr><td colspan="7" class="text-center py-6 text-red-400">Failed to load docket records.</td></tr>`;
+    }
   }
 }
 
 function applyFilters() {
-  const q = document.getElementById('admin-search-input').value.toLowerCase().trim();
-  const status = document.getElementById('status-filter').value;
-  const advocate = document.getElementById('advocate-filter').value;
+  const q = document.getElementById('admin-search-input')?.value.toLowerCase().trim() || '';
+  const status = document.getElementById('status-filter')?.value || 'ALL';
+  const advocate = document.getElementById('advocate-filter')?.value || 'ALL';
 
   const filtered = allCases.filter(c => {
     const matchesSearch = !q || 
@@ -203,7 +221,24 @@ function renderConsultationsTable(cases) {
   if (!tbody) return;
 
   if (cases.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="7" class="text-center py-8 text-slate-500">No matching dockets found.</td></tr>`;
+    if (allCases.length === 0) {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="7" class="text-center py-12 text-slate-400">
+            <div class="max-w-md mx-auto space-y-2">
+              <div class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center mx-auto text-amber-400 mb-2">
+                <i data-lucide="scale" class="w-6 h-6"></i>
+              </div>
+              <p class="font-serif text-base font-bold text-white">No Active Case Dockets</p>
+              <p class="text-xs text-slate-400">When clients submit legal consultations on the portal or via WhatsApp, new dockets will appear here automatically.</p>
+            </div>
+          </td>
+        </tr>
+      `;
+    } else {
+      tbody.innerHTML = `<tr><td colspan="7" class="text-center py-8 text-slate-500">No dockets match your search filter criteria.</td></tr>`;
+    }
+    if (window.lucide) window.lucide.createIcons();
     return;
   }
 
@@ -446,5 +481,62 @@ async function loadMessages() {
     if (window.lucide) window.lucide.createIcons();
   } catch (err) {
     container.innerHTML = '<div class="text-red-400 text-center py-6">Failed to load inquiries.</div>';
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. NEW DOCKET CREATION (CHAMBERS DESK)
+   -------------------------------------------------------------------------- */
+window.openNewDocketModal = function() {
+  document.getElementById('new-docket-modal')?.classList.remove('hidden');
+};
+
+window.closeNewDocketModal = function() {
+  document.getElementById('new-docket-modal')?.classList.add('hidden');
+};
+
+async function handleCreateDocket(e) {
+  e.preventDefault();
+  if (!authToken) return;
+
+  const btn = document.getElementById('new-docket-submit-btn');
+  const originalText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Generating Docket...`;
+  if (window.lucide) window.lucide.createIcons();
+
+  const payload = {
+    clientName: document.getElementById('new-client-name').value.trim(),
+    phone: document.getElementById('new-phone').value.trim(),
+    category: document.getElementById('new-category').value,
+    assignedAdvocate: document.getElementById('new-advocate').value,
+    status: document.getElementById('new-status').value,
+    urgency: document.getElementById('new-urgency').value,
+    stage: document.getElementById('new-stage').value.trim() || 'Chambers Dossier Created',
+    court: document.getElementById('new-court').value.trim() || 'SW Legal Hub Chamber, Madinaguda',
+    nextHearing: document.getElementById('new-next-hearing').value || 'To be scheduled',
+    summary: document.getElementById('new-summary').value.trim() || 'Direct chambers consultation.'
+  };
+
+  try {
+    const res = await fetch('/api/admin/consultations', {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify(payload)
+    });
+    const json = await res.json();
+    if (!json.success) throw new Error(json.message);
+
+    alert(`Case Docket ${json.data.refId} successfully registered for ${json.data.clientName}.`);
+    closeNewDocketModal();
+    document.getElementById('new-docket-form').reset();
+    loadStats();
+    loadConsultations();
+  } catch (err) {
+    alert(err.message || 'Error creating docket.');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = originalText;
+    if (window.lucide) window.lucide.createIcons();
   }
 }
