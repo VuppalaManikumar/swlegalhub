@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Refresh
   document.getElementById('refresh-btn')?.addEventListener('click', () => {
-    loadStats();
-    loadConsultations();
+    loadConsultations(false);
   });
 
   // New Docket Form
@@ -34,13 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Logout
   document.getElementById('logout-btn')?.addEventListener('click', handleLogout);
 
-  // Live Auto-Refresh Polling: Checks for new consultations every 10 seconds automatically
+  // Live Auto-Refresh Polling: Checks for new consultations every 15 seconds silently
   setInterval(() => {
     if (authToken) {
-      loadStats();
       loadConsultations(true);
     }
-  }, 10000);
+  }, 15000);
 });
 
 /* --------------------------------------------------------------------------
@@ -52,11 +50,22 @@ function initAuth() {
   const loginForm = document.getElementById('admin-login-form');
 
   if (authToken) {
-    // Show dashboard
+    // Show dashboard immediately
     loginView?.classList.add('hidden');
     dashboardView?.classList.remove('hidden');
-    loadStats();
-    loadConsultations();
+
+    // Instant zero-delay render from local browser cache if available
+    const cached = localStorage.getItem('sw_cached_cases');
+    if (cached) {
+      try {
+        allCases = JSON.parse(cached);
+        renderConsultationsTable(allCases);
+        updateStatsFromCases(allCases);
+      } catch (e) {}
+    }
+
+    // Refresh live in background without blocking UI
+    loadConsultations(true);
   } else {
     // Show login screen
     loginView?.classList.remove('hidden');
@@ -100,8 +109,8 @@ function initAuth() {
         loginView?.classList.add('hidden');
         dashboardView?.classList.remove('hidden');
 
-        loadStats();
-        loadConsultations();
+        // Immediately fetch cases
+        loadConsultations(false);
       } catch (err) {
         if (errorDiv && errorMsg) {
           errorMsg.textContent = err.message || 'Invalid Credentials. Please check username and password/PIN.';
@@ -135,9 +144,30 @@ function authHeaders() {
 }
 
 /* --------------------------------------------------------------------------
-   2. DASHBOARD DATA LOADERS
+   2. DASHBOARD DATA LOADERS & INSTANT STATS
    -------------------------------------------------------------------------- */
+function updateStatsFromCases(cases) {
+  const total = cases.length;
+  const pending = cases.filter(c => c.status === 'Pending' || c.status === 'Pending Review').length;
+  const progress = cases.filter(c => c.status === 'In Progress').length;
+  const court = cases.filter(c => c.status === 'In Court').length;
+
+  const totalEl = document.getElementById('stat-total');
+  const pendingEl = document.getElementById('stat-pending');
+  const progressEl = document.getElementById('stat-progress');
+  const courtEl = document.getElementById('stat-court');
+
+  if (totalEl) totalEl.textContent = total;
+  if (pendingEl) pendingEl.textContent = pending;
+  if (progressEl) progressEl.textContent = progress;
+  if (courtEl) courtEl.textContent = court;
+}
+
 async function loadStats() {
+  if (allCases.length > 0) {
+    updateStatsFromCases(allCases);
+    return;
+  }
   if (!authToken) return;
 
   try {
@@ -188,9 +218,13 @@ async function loadConsultations(isSilent = false) {
     if (!json.success) throw new Error('Failed to load dockets');
 
     allCases = json.data || [];
+    try {
+      localStorage.setItem('sw_cached_cases', JSON.stringify(allCases));
+    } catch (e) {}
+    updateStatsFromCases(allCases);
     applyFilters();
   } catch (err) {
-    if (!isSilent) {
+    if (!isSilent && allCases.length === 0) {
       tbody.innerHTML = `<tr><td colspan="7" class="text-center py-6 text-red-400">Failed to load docket records.</td></tr>`;
     }
   }
@@ -347,15 +381,19 @@ window.saveStatus = async function(refId) {
     const item = allCases.find(c => c.refId === refId);
     if (item) item.status = newStatus;
 
+    try {
+      localStorage.setItem('sw_cached_cases', JSON.stringify(allCases));
+    } catch (e) {}
+    updateStatsFromCases(allCases);
+
     btn.className = "bg-emerald-600 text-white text-[10px] py-1 px-2.5 rounded font-bold transition-all shadow";
     btn.innerHTML = "Saved ✓";
-    loadStats();
 
     setTimeout(() => {
       btn.className = "btn-gold text-[10px] py-1 px-2.5 rounded font-bold cursor-pointer transition-all active:scale-95 shadow";
       btn.innerHTML = "Save";
       btn.disabled = false;
-    }, 1800);
+    }, 1500);
   } catch (err) {
     alert(err.message || 'Failed to update status');
     btn.innerHTML = originalText;
@@ -377,8 +415,11 @@ window.deleteCase = async function(refId) {
 
     alert(`Case ${refId} has been successfully deleted.`);
     allCases = allCases.filter(c => c.refId !== refId);
+    try {
+      localStorage.setItem('sw_cached_cases', JSON.stringify(allCases));
+    } catch (e) {}
     renderConsultationsTable(allCases);
-    loadStats();
+    updateStatsFromCases(allCases);
   } catch (err) {
     alert(err.message || 'Failed to delete case.');
   }
@@ -398,8 +439,11 @@ window.purgeAllDockets = async function() {
 
     alert(json.message || 'All case dockets successfully cleared.');
     allCases = [];
+    try {
+      localStorage.removeItem('sw_cached_cases');
+    } catch (e) {}
     renderConsultationsTable(allCases);
-    loadStats();
+    updateStatsFromCases(allCases);
   } catch (err) {
     alert(err.message || 'Failed to clear all dockets.');
   }
@@ -551,8 +595,16 @@ async function handleCreateDocket(e) {
     alert(`Case Docket ${json.data.refId} successfully registered for ${json.data.clientName}.`);
     closeNewDocketModal();
     document.getElementById('new-docket-form').reset();
-    loadStats();
-    loadConsultations();
+    
+    if (json.data) {
+      allCases.unshift(json.data);
+      try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify(allCases));
+      } catch (e) {}
+      updateStatsFromCases(allCases);
+      applyFilterAndRender();
+    }
+    loadConsultations(true);
   } catch (err) {
     alert(err.message || 'Error creating docket.');
   } finally {
