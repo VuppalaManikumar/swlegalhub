@@ -1105,7 +1105,7 @@
   </button>
 
   <!-- Chat Window -->
-  <div id="chat-window" class="hidden">
+  <div id="chat-window" class="hidden" style="display: none;">
     <!-- Header -->
     <div class="p-3.5 bg-obsidian-800 border-b border-slate-800 flex items-center justify-between">
       <div class="flex items-center gap-2.5">
@@ -1120,12 +1120,12 @@
           </div>
         </div>
       </div>
-      <button id="chat-close-btn" type="button" onclick="closeNyayaBot()" class="bg-red-500/20 hover:bg-red-500/30 text-red-300 hover:text-white border border-red-500/40 px-2 py-1 rounded-md text-[11px] font-bold flex items-center gap-1 cursor-pointer transition-all" title="Close Assistant" aria-label="Close Assistant">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="pointer-events-none">
+      <button id="chat-close-btn" type="button" onclick="document.getElementById('chat-window').style.setProperty('display', 'none', 'important'); document.getElementById('chat-window').classList.add('hidden'); closeNyayaBot();" class="bg-red-500/20 hover:bg-red-500/40 text-red-300 hover:text-white border border-red-500/50 px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 cursor-pointer transition-all shadow-md active:scale-95 z-50" title="Close Assistant" aria-label="Close Assistant">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="pointer-events-none">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
-        <span>✕ Exit</span>
+        <span>Exit</span>
       </button>
     </div>
 
@@ -1192,15 +1192,23 @@
     // Bulletproof close & toggle handlers for NyayaBot
     function closeNyayaBot() {
       var w = document.getElementById('chat-window');
-      if (w) w.classList.add('hidden');
+      if (w) {
+        w.style.setProperty('display', 'none', 'important');
+        w.classList.add('hidden');
+      }
     }
     function toggleNyayaBot() {
       var w = document.getElementById('chat-window');
       if (w) {
-        w.classList.toggle('hidden');
-        if (!w.classList.contains('hidden')) {
+        var isHidden = (w.style.display === 'none' || w.classList.contains('hidden') || window.getComputedStyle(w).display === 'none');
+        if (isHidden) {
+          w.style.setProperty('display', 'flex', 'important');
+          w.classList.remove('hidden');
           var inp = document.getElementById('chat-input');
           if (inp) inp.focus();
+        } else {
+          w.style.setProperty('display', 'none', 'important');
+          w.classList.add('hidden');
         }
       }
     }

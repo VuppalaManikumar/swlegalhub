@@ -684,10 +684,15 @@ async function calculateStampDuty(val, type, container) {
 window.toggleNyayaBot = function() {
   const windowEl = document.getElementById('chat-window');
   if (windowEl) {
-    windowEl.classList.toggle('hidden');
-    if (!windowEl.classList.contains('hidden')) {
+    const isHidden = (windowEl.style.display === 'none' || windowEl.classList.contains('hidden') || window.getComputedStyle(windowEl).display === 'none');
+    if (isHidden) {
+      windowEl.style.setProperty('display', 'flex', 'important');
+      windowEl.classList.remove('hidden');
       const input = document.getElementById('chat-input');
       if (input) input.focus();
+    } else {
+      windowEl.style.setProperty('display', 'none', 'important');
+      windowEl.classList.add('hidden');
     }
   }
 };
@@ -695,6 +700,7 @@ window.toggleNyayaBot = function() {
 window.closeNyayaBot = function() {
   const windowEl = document.getElementById('chat-window');
   if (windowEl) {
+    windowEl.style.setProperty('display', 'none', 'important');
     windowEl.classList.add('hidden');
   }
 };
