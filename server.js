@@ -375,8 +375,60 @@ app.post('/api/chat', (req, res) => {
   });
 });
 
-// 10. Admin API: Get Consultations & Messages
-app.get('/api/admin/consultations', (req, res) => {
+// 10. Admin Authentication Endpoint
+app.post('/api/admin/login', (req, res) => {
+  const { username, password } = req.body;
+  if (!username || !password) {
+    return res.status(400).json({ success: false, message: 'Username and password / PIN are required.' });
+  }
+
+  const db = readDb();
+  const auth = db.adminAuth || {
+    username: 'swlegalhub',
+    email: 'swlegalhub9949@gmail.com',
+    password: 'SWLegal@2026',
+    pin: '9949'
+  };
+
+  const u = username.trim().toLowerCase();
+  const isValidUser = (u === auth.username.toLowerCase() || u === auth.email.toLowerCase() || u === 'admin');
+  const isValidPass = (password === auth.password || password === auth.pin);
+
+  if (isValidUser && isValidPass) {
+    // Generate simple token for session
+    const token = 'SWL-TOKEN-' + Buffer.from(auth.username + ':' + Date.now()).toString('base64');
+    return res.json({
+      success: true,
+      message: 'Chambers authentication successful.',
+      token: token,
+      user: {
+        name: 'Chambers Advocate Desk',
+        username: auth.username,
+        email: auth.email
+      }
+    });
+  } else {
+    return res.status(401).json({
+      success: false,
+      message: 'Invalid credentials. Access restricted to authorized SW Legal Hub advocates and staff.'
+    });
+  }
+});
+
+// Middleware to verify admin token
+function requireAdminAuth(req, res, next) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith('Bearer SWL-TOKEN-')) {
+    return res.status(401).json({
+      success: false,
+      message: 'Unauthorized. Advocate chambers login required.'
+    });
+  }
+  next();
+}
+
+// 11. Admin API: Get Consultations & Messages (Protected)
+app.get('/api/admin/consultations', requireAdminAuth, (req, res) => {
   const db = readDb();
   res.json({
     success: true,
@@ -385,7 +437,7 @@ app.get('/api/admin/consultations', (req, res) => {
   });
 });
 
-app.get('/api/admin/messages', (req, res) => {
+app.get('/api/admin/messages', requireAdminAuth, (req, res) => {
   const db = readDb();
   res.json({
     success: true,
@@ -394,8 +446,8 @@ app.get('/api/admin/messages', (req, res) => {
   });
 });
 
-// Update Case / Consultation details from Admin
-app.put('/api/admin/consultations/:refId', (req, res) => {
+// Update Case / Consultation details from Admin (Protected)
+app.put('/api/admin/consultations/:refId', requireAdminAuth, (req, res) => {
   const db = readDb();
   const refId = req.params.refId;
   const index = db.consultations.findIndex(c => c.refId.toLowerCase() === refId.toLowerCase());
@@ -420,8 +472,8 @@ app.put('/api/admin/consultations/:refId', (req, res) => {
   });
 });
 
-// Admin stats overview
-app.get('/api/admin/stats', (req, res) => {
+// Admin stats overview (Protected)
+app.get('/api/admin/stats', requireAdminAuth, (req, res) => {
   const db = readDb();
   const consultations = db.consultations || [];
   

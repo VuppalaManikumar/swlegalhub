@@ -797,12 +797,15 @@ function appendChatBubble(sender, text, advocate, action) {
         </div>
       ` : ''}
       ${action ? `
-        <div class="pt-1">
+        <div class="pt-1 flex flex-wrap items-center justify-between gap-2">
           <a href="https://wa.me/919346818069?text=${encodeURIComponent('Hello SW Legal Hub, I need advice regarding: ' + text.slice(0, 100))}" 
              target="_blank" class="inline-flex items-center gap-1 text-[11px] text-amber-400 hover:underline font-bold">
             <i data-lucide="message-square" class="w-3 h-3"></i>
             ${action} &rarr;
           </a>
+          <button type="button" onclick="closeNyayaBot()" class="text-[10px] text-red-300 hover:text-red-200 bg-red-950/40 hover:bg-red-900/60 px-2 py-0.5 rounded border border-red-800/60 cursor-pointer transition-colors" title="Close Chat Window">
+            ✕ Exit Chat
+          </button>
         </div>
       ` : ''}
     `;

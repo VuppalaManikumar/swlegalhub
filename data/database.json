@@ -1,4 +1,10 @@
 {
+  "adminAuth": {
+    "username": "swlegalhub",
+    "email": "swlegalhub9949@gmail.com",
+    "password": "SWLegal@2026",
+    "pin": "9949"
+  },
   "office": {
     "name": "SW LEGAL HUB",
     "tagline": "ADVOCATE. ADVISE. ACHIEVE.",

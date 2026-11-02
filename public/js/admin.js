@@ -1,15 +1,17 @@
 /**
  * SW LEGAL HUB - CHAMBERS ADMIN DASHBOARD CONTROLLER
+ * Protected Advocate & Staff Portal with Authentication
  */
 
 let allCases = [];
+let authToken = sessionStorage.getItem('sw_admin_token') || localStorage.getItem('sw_admin_token');
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) window.lucide.createIcons();
 
-  loadStats();
-  loadConsultations();
+  initAuth();
 
+  // Refresh
   document.getElementById('refresh-btn')?.addEventListener('click', () => {
     loadStats();
     loadConsultations();
@@ -25,11 +27,118 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Messages
   document.getElementById('view-messages-btn')?.addEventListener('click', loadMessages);
+
+  // Logout
+  document.getElementById('logout-btn')?.addEventListener('click', handleLogout);
 });
 
+/* --------------------------------------------------------------------------
+   1. AUTHENTICATION & LOGIN CONTROLLER
+   -------------------------------------------------------------------------- */
+function initAuth() {
+  const loginView = document.getElementById('login-view');
+  const dashboardView = document.getElementById('dashboard-view');
+  const loginForm = document.getElementById('admin-login-form');
+
+  if (authToken) {
+    // Show dashboard
+    loginView?.classList.add('hidden');
+    dashboardView?.classList.remove('hidden');
+    loadStats();
+    loadConsultations();
+  } else {
+    // Show login screen
+    loginView?.classList.remove('hidden');
+    dashboardView?.classList.add('hidden');
+  }
+
+  if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const userVal = document.getElementById('login-username').value.trim();
+      const passVal = document.getElementById('login-password').value.trim();
+      const errorDiv = document.getElementById('login-error');
+      const errorMsg = document.getElementById('login-error-msg');
+      const submitBtn = document.getElementById('login-submit-btn');
+
+      if (!userVal || !passVal) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Verifying Chambers Credentials...`;
+      if (window.lucide) window.lucide.createIcons();
+
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username: userVal, password: passVal })
+        });
+
+        const json = await res.json();
+
+        if (!json.success) {
+          throw new Error(json.message || 'Authentication failed');
+        }
+
+        // Store token in session
+        authToken = json.token;
+        sessionStorage.setItem('sw_admin_token', authToken);
+        localStorage.setItem('sw_admin_token', authToken);
+
+        errorDiv?.classList.add('hidden');
+        loginView?.classList.add('hidden');
+        dashboardView?.classList.remove('hidden');
+
+        loadStats();
+        loadConsultations();
+      } catch (err) {
+        if (errorDiv && errorMsg) {
+          errorMsg.textContent = err.message || 'Invalid Credentials. Please check username and password/PIN.';
+          errorDiv.classList.remove('hidden');
+        }
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<i data-lucide="log-in" class="w-4 h-4"></i> Authenticate & Open Docket System`;
+        if (window.lucide) window.lucide.createIcons();
+      }
+    });
+  }
+}
+
+function handleLogout() {
+  authToken = null;
+  sessionStorage.removeItem('sw_admin_token');
+  localStorage.removeItem('sw_admin_token');
+
+  document.getElementById('login-view')?.classList.remove('hidden');
+  document.getElementById('dashboard-view')?.classList.add('hidden');
+  document.getElementById('login-password').value = '';
+}
+
+// Helper for authenticated requests
+function authHeaders() {
+  return {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${authToken}`
+  };
+}
+
+/* --------------------------------------------------------------------------
+   2. DASHBOARD DATA LOADERS
+   -------------------------------------------------------------------------- */
 async function loadStats() {
+  if (!authToken) return;
+
   try {
-    const res = await fetch('/api/admin/stats');
+    const res = await fetch('/api/admin/stats', {
+      headers: authHeaders()
+    });
+
+    if (res.status === 401) {
+      handleLogout();
+      return;
+    }
+
     const json = await res.json();
     if (!json.success) return;
 
@@ -44,11 +153,21 @@ async function loadStats() {
 }
 
 async function loadConsultations() {
+  if (!authToken) return;
+
   const tbody = document.getElementById('cases-tbody');
   if (!tbody) return;
 
   try {
-    const res = await fetch('/api/admin/consultations');
+    const res = await fetch('/api/admin/consultations', {
+      headers: authHeaders()
+    });
+
+    if (res.status === 401) {
+      handleLogout();
+      return;
+    }
+
     const json = await res.json();
     if (!json.success) throw new Error('Failed to load dockets');
 
@@ -92,7 +211,7 @@ function renderConsultationsTable(cases) {
     'Pending': 'bg-amber-500/10 text-amber-300 border-amber-500/30',
     'Pending Review': 'bg-amber-500/10 text-amber-300 border-amber-500/30',
     'In Progress': 'bg-blue-500/10 text-blue-300 border-blue-500/30',
-    'In Court': 'bg-purple-500/10 text-purple-300 border-purple-500/30',
+    'In Court': 'bg-purple-500/20 text-purple-300 border-purple-500/30',
     'Completed': 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30',
     'Closed': 'bg-slate-700 text-slate-300 border-slate-600'
   };
@@ -180,7 +299,7 @@ window.closeEditModal = function() {
 async function handleDocketUpdate(e) {
   e.preventDefault();
   const refId = document.getElementById('edit-ref-id').value;
-  if (!refId) return;
+  if (!refId || !authToken) return;
 
   const payload = {
     status: document.getElementById('edit-status').value,
@@ -194,7 +313,7 @@ async function handleDocketUpdate(e) {
   try {
     const res = await fetch(`/api/admin/consultations/${encodeURIComponent(refId)}`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: authHeaders(),
       body: JSON.stringify(payload)
     });
     const json = await res.json();
@@ -210,6 +329,8 @@ async function handleDocketUpdate(e) {
 }
 
 async function loadMessages() {
+  if (!authToken) return;
+
   const modal = document.getElementById('messages-modal');
   const container = document.getElementById('messages-list');
   if (!modal || !container) return;
@@ -218,7 +339,9 @@ async function loadMessages() {
   container.innerHTML = '<div class="text-center py-6 text-slate-400">Loading inquiries...</div>';
 
   try {
-    const res = await fetch('/api/admin/messages');
+    const res = await fetch('/api/admin/messages', {
+      headers: authHeaders()
+    });
     const json = await res.json();
 
     if (!json.success || !json.data.length) {
