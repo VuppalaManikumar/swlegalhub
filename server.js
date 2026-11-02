@@ -253,7 +253,7 @@ app.post('/api/consultations', upload.array('documents', 5), async (req, res) =>
     const waText = encodeURIComponent(
       `Hello SW Legal Hub,\n\nI have submitted a legal consultation request.\n*Ref ID:* ${refId}\n*Name:* ${clientName}\n*Practice Area:* ${category}\n*Urgency:* ${urgency || 'Normal'}\n\nPlease confirm my appointment slot.`
     );
-    const whatsappLink = `https://wa.me/919346818069?text=${waText}`;
+    const whatsappLink = `https://wa.me/916305232587?text=${waText}`;
 
     res.status(201).json({
       success: true,
@@ -443,13 +443,13 @@ app.post('/api/chat', (req, res) => {
     relatedAdvocate = 'Adv. Shaik Ghouseddin & Adv. Shaik Murtuza';
     actionSuggestion = 'Book Comprehensive Title Verification';
   } else if (query.includes('fee') || query.includes('cost') || query.includes('charge') || query.includes('price')) {
-    reply = `At SW Legal Hub, we maintain strict fee transparency. Legal fee structures depend on the nature of the matter (e.g., preliminary legal advice, document vetting, statutory notice drafting, or court trial appearances). Initial chamber consultations start at nominal transparent rates. You can book an appointment online or request an immediate quote over WhatsApp at 9346818069.`;
-    actionSuggestion = 'Request Quote via WhatsApp (9346818069)';
+    reply = `At SW Legal Hub, we maintain strict fee transparency. Legal fee structures depend on the nature of the matter (e.g., preliminary legal advice, document vetting, statutory notice drafting, or court trial appearances). Initial chamber consultations start at nominal transparent rates. You can book an appointment online or request an immediate quote over WhatsApp at 6305232587.`;
+    actionSuggestion = 'Request Quote via WhatsApp (6305232587)';
   } else if (query.includes('address') || query.includes('location') || query.includes('where') || query.includes('madinaguda') || query.includes('office') || query.includes('timings')) {
     reply = `SW Legal Hub is located at: SK. SIRAJ MANZIL, H.NO 1-58/3/2/A, PLOT NO. 74 B, BESIDE INDIAN OIL PETROLBUNK, MADINAGUDA, 500049 (Hyderabad, Telangana). Our chamber is open Monday through Saturday from 9:00 AM to 9:00 PM. Sunday consultations are available by prior appointment. For urgent matters, our emergency legal line operates 24/7.`;
     actionSuggestion = 'View Map & Directions or Call 88015 93599';
   } else {
-    reply = `Thank you for consulting SW Legal Hub. We specialize in Family Law, Civil Disputes & Property Scrutiny, Criminal Defense & Bail, Cybercrime & Bank Freezes, and Section 138 Cheque Bounce Cases. Our 7 experienced advocates are available at our Madinaguda chamber or via virtual consultation. You can schedule an appointment online, track your existing case status, or reach us directly at 88015 93599 / WhatsApp 9346818069.`;
+    reply = `Thank you for consulting SW Legal Hub. We specialize in Family Law, Civil Disputes & Property Scrutiny, Criminal Defense & Bail, Cybercrime & Bank Freezes, and Section 138 Cheque Bounce Cases. Our 7 experienced advocates are available at our Madinaguda chamber or via virtual consultation. You can schedule an appointment online, track your existing case status, or reach us directly at 88015 93599 / WhatsApp 6305232587.`;
     actionSuggestion = 'Book an Appointment or Track Case';
   }
 
@@ -695,7 +695,7 @@ if (process.env.NODE_ENV !== 'test' && !process.env.VERCEL) {
     console.log(`⚖️  SW LEGAL HUB - ADVOCATE OFFICE PORTAL`);
     console.log(`🌐 Server active on: http://localhost:${PORT}`);
     console.log(`📍 Madinaguda, Hyderabad - 500049`);
-    console.log(`📞 Contact: 88015 93599 | WhatsApp: 9346818069`);
+    console.log(`📞 Contact: 88015 93599 | WhatsApp: 6305232587`);
     console.log(`=======================================================`);
   });
 }

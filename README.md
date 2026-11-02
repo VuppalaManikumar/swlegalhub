@@ -3,7 +3,7 @@
 > **ADVOCATE. ADVISE. ACHIEVE.**  
 > *Committed to Justice. Dedicated to Your Rights.*  
 > **Office:** SK. SIRAJ MANZIL, H.NO 1-58/3/2/A, PLOT NO. 74 B, BESIDE INDIAN OIL PETROLBUNK, MADINAGUDA, 500049  
-> **Call:** 88015 93599 | **WhatsApp:** 9346818069 | **Email:** swlegalhub9949@gmail.com
+> **Call:** 88015 93599 | **WhatsApp:** 6305232587 | **Email:** swlegalhub9949@gmail.com
 
 ---
 

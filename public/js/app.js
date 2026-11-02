@@ -92,7 +92,7 @@ function renderAdvocates(advocates, container) {
             <i data-lucide="scale" class="w-6 h-6"></i>
           </div>
           <span class="text-xs uppercase tracking-wider font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30">
-            ${adv.experienceYears}+ Yrs Exp
+            Advocate
           </span>
         </div>
 
@@ -218,7 +218,7 @@ async function performTrack(identifier) {
           <i data-lucide="alert-circle" class="w-10 h-10 text-red-400 mx-auto mb-2"></i>
           <h4 class="text-lg font-bold text-white mb-1">Record Not Found</h4>
           <p class="text-slate-300 text-sm max-w-md mx-auto mb-4">${json.message}</p>
-          <a href="https://wa.me/919346818069?text=Hello%20SW%20Legal%20Hub,%20I%20am%20inquiring%20about%20my%20case%20record%20${encodeURIComponent(identifier)}" 
+          <a href="https://wa.me/916305232587?text=Hello%20SW%20Legal%20Hub,%20I%20am%20inquiring%20about%20my%20case%20record%20${encodeURIComponent(identifier)}" 
              target="_blank" class="btn-outline-gold text-xs py-2 px-4 inline-flex items-center gap-2">
             <i data-lucide="message-circle" class="w-4 h-4"></i>
             Inquire via Chambers WhatsApp
@@ -372,7 +372,7 @@ function renderTrackingResult(c, container) {
 
       <!-- Action Bar -->
       <div class="flex flex-wrap gap-3 pt-4 border-t border-slate-800">
-        <a href="https://wa.me/919346818069?text=Hello%20Advocate,%20following%20up%20on%20my%20case%20docket%20*${encodeURIComponent(c.refId)}*%20(${encodeURIComponent(c.clientName)})." 
+        <a href="https://wa.me/916305232587?text=Hello%20Advocate,%20following%20up%20on%20my%20case%20docket%20*${encodeURIComponent(c.refId)}*%20(${encodeURIComponent(c.clientName)})." 
            target="_blank" class="btn-gold text-xs py-2.5 px-4 flex-1 justify-center">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           Direct WhatsApp to Assigned Advocate
@@ -795,7 +795,7 @@ function appendChatBubble(sender, text, advocate, action) {
       ` : ''}
       ${action ? `
         <div class="pt-1 flex flex-wrap items-center justify-between gap-2">
-          <a href="https://wa.me/919346818069?text=${encodeURIComponent('Hello SW Legal Hub, I need advice regarding: ' + text.slice(0, 100))}" 
+          <a href="https://wa.me/916305232587?text=${encodeURIComponent('Hello SW Legal Hub, I need advice regarding: ' + text.slice(0, 100))}" 
              target="_blank" class="inline-flex items-center gap-1 text-[11px] text-amber-400 hover:underline font-bold">
             <i data-lucide="message-square" class="w-3 h-3"></i>
             ${action} &rarr;
